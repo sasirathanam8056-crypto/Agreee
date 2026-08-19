@@ -1,0 +1,441 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    overflow:hidden;
+    background:#000;
+}
+.modal{
+    display:block !important;
+}
+/* ===========================
+   VIDEO
+=========================== */
+
+#bg-video{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:-2;
+
+    animation:zoom 18s infinite alternate;
+}
+video{
+    position: fixed;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    top:0;
+    left:0;
+    z-index:-2;
+}
+
+@keyframes zoom{
+
+from{
+
+transform:scale(1);
+
+}
+
+to{
+
+transform:scale(1.15);
+
+}
+
+}
+
+/* ===========================
+   OVERLAY
+=========================== */
+
+.overlay{
+
+position:absolute;
+
+width:100%;
+
+height:100%;
+
+background:linear-gradient(
+rgba(0,0,0,.55),
+rgba(0,60,20,.60)
+);
+
+z-index:-1;
+
+}
+
+/* ===========================
+ SPLASH
+=========================== */
+
+.splash{
+
+height:100vh;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+color:white;
+
+text-align:center;
+
+}
+
+/* ===========================
+ LOGO
+=========================== */
+
+.logo{
+
+width:140px;
+
+animation:logo 2s infinite alternate;
+
+filter:drop-shadow(0 0 20px #4CAF50);
+
+}
+
+@keyframes logo{
+
+from{
+
+transform:scale(.9) rotate(-4deg);
+
+}
+
+to{
+
+transform:scale(1.05) rotate(4deg);
+
+}
+
+}
+
+.splash h1{
+
+font-size:60px;
+
+font-weight:700;
+
+margin-top:20px;
+
+animation:fadeDown 1.5s;
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    color:white;
+
+}
+
+.splash h3{
+
+font-weight:400;
+
+margin-top:10px;
+
+color:#90EE90;
+
+animation:fadeUp 2s;
+
+}
+
+.splash p{
+
+margin-top:15px;
+
+font-size:20px;
+
+letter-spacing:2px;
+
+animation:fade 3s infinite;
+
+}
+
+/* ===========================
+ LOADER
+=========================== */
+
+.loader{
+
+margin-top:40px;
+
+width:350px;
+
+}
+
+.progress{
+
+height:14px;
+
+border-radius:30px;
+
+overflow:hidden;
+
+background:white;
+
+}
+
+#percent{
+
+display:block;
+
+margin-top:10px;
+
+font-size:22px;
+
+font-weight:bold;
+
+color:#90EE90;
+
+}
+
+/* ===========================
+ FLOATING LEAVES
+=========================== */
+
+.leaf{
+
+position:absolute;
+
+font-size:35px;
+
+animation:leaf 8s linear infinite;
+
+opacity:.8;
+
+}
+
+.leaf1{
+
+left:10%;
+
+animation-delay:0s;
+
+}
+
+.leaf2{
+
+left:35%;
+
+animation-delay:2s;
+
+}
+
+.leaf3{
+
+left:65%;
+
+animation-delay:4s;
+
+}
+
+.leaf4{
+
+left:90%;
+
+animation-delay:6s;
+
+}
+
+@keyframes leaf{
+
+0%{
+
+transform:translateY(-120px) rotate(0deg);
+
+}
+
+100%{
+
+transform:translateY(900px) rotate(360deg);
+
+}
+
+}
+
+/* ===========================
+ TEXT
+=========================== */
+
+@keyframes fadeDown{
+
+from{
+
+opacity:0;
+
+transform:translateY(-40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+@keyframes fade{
+
+0%{
+
+opacity:.4;
+
+}
+
+50%{
+
+opacity:1;
+
+}
+
+100%{
+
+opacity:.4;
+
+}
+
+}
+
+/* ===========================
+ MOBILE
+=========================== */
+
+@media(max-width:768px){
+
+.splash h1{
+
+font-size:36px;
+
+}
+
+.splash h3{
+
+font-size:20px;
+}
+
+.loader{
+
+width:90%;
+
+}
+
+.logo{
+
+width:100px;
+
+}
+
+}
+
+/* =========================================================
+   SMARTFARM FINAL RESPONSIVE LAYER
+   ========================================================= */
+@media (max-width: 900px){
+  body{overflow-x:hidden;}
+  .main{width:100%;margin-left:0 !important;padding:0 18px !important;}
+  .sidebar{
+    position:fixed !important;
+    left:-280px !important;
+    top:0 !important;
+    height:100vh !important;
+    z-index:2000 !important;
+    transition:left .3s ease;
+  }
+  .sidebar.mobile-open{left:0 !important;}
+  .mobile-sidebar-backdrop{
+    display:block;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.35);
+    z-index:1900;
+    opacity:0;
+    visibility:hidden;
+    transition:.25s;
+  }
+  .mobile-sidebar-backdrop.show{opacity:1;visibility:visible;}
+  header{
+    width:100% !important;
+    left:0 !important;
+    padding:14px 18px !important;
+    gap:12px;
+  }
+  header h2{font-size:18px !important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  header .profile span{display:none;}
+  .menu{display:flex !important;cursor:pointer;align-items:center;justify-content:center;}
+  .welcome{grid-template-columns:1fr !important;}
+  .farm-image{min-height:230px !important;}
+  .cards{grid-template-columns:repeat(2,minmax(0,1fr)) !important;}
+  .dashboard-grid{grid-template-columns:1fr !important;}
+  .soil-grid,.analytics-grid,.market-grid,.reports-grid,.settings-main,.disease-grid{
+    grid-template-columns:1fr !important;
+  }
+  .weather-grid,.forecast-grid,.feature-grid,.stats-grid,.info-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  }
+  img,canvas{max-width:100%;}
+  table{display:block;overflow-x:auto;white-space:nowrap;max-width:100%;}
+  input,select,textarea,button{max-width:100%;}
+}
+@media (max-width: 600px){
+  .main{padding:0 12px !important;}
+  header{padding:12px !important;}
+  header h2{font-size:14px !important;}
+  .profile img{width:34px !important;height:34px !important;}
+  .cards,.weather-grid,.forecast-grid,.feature-grid,.stats-grid,.info-grid{
+    grid-template-columns:1fr !important;
+  }
+  .welcome{padding:18px !important;}
+  .welcome h1{font-size:25px !important;line-height:1.25;}
+  .card{padding:16px !important;}
+  .box{padding:16px !important;}
+  .section-heading,.recommendation-header,.soil-header,.settings-actions{
+    flex-direction:column !important;
+    align-items:flex-start !important;
+    gap:12px;
+  }
+  .prediction-card,.soil-page,.analytics-page,.market-page,.reports-page,.settings-page{
+    padding:12px !important;
+  }
+  .form-grid,.input-grid,.preference-grid{grid-template-columns:1fr !important;}
+}
