@@ -1,0 +1,337 @@
+/* ==============================
+   RESET
+============================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ==============================
+   BODY
+============================== */
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f8f4;
+    color: #26382a;
+}
+
+
+/* ==============================
+   MAIN
+============================== */
+
+.main {
+    width: 100%;
+    min-height: 100vh;
+    padding: 35px 50px;
+}
+
+
+/* ==============================
+   TITLE
+============================== */
+
+.main h1 {
+    font-size: 30px;
+    color: #176b2c;
+    margin-bottom: 25px;
+}
+
+
+/* ==============================
+   CARD
+============================== */
+
+.prediction-card {
+    width: 100%;
+    max-width: 1050px;
+
+    background: #ffffff;
+
+    padding: 30px;
+
+    border-radius: 18px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ==============================
+   CARD TITLE
+============================== */
+
+.prediction-card h3 {
+    font-size: 20px;
+    color: #183b20;
+
+    margin-bottom: 25px;
+}
+
+
+/* ==============================
+   FORM
+============================== */
+
+#cropForm {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 22px 25px;
+}
+
+
+/* ==============================
+   FORM GROUP
+============================== */
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* ==============================
+   LABEL
+============================== */
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 600;
+
+    color: #26382a;
+
+    margin-bottom: 8px;
+}
+
+
+/* ==============================
+   INPUT
+============================== */
+
+.form-group input {
+    width: 100%;
+    height: 45px;
+
+    padding: 0 13px;
+
+    border: 1px solid #d1ddd3;
+
+    border-radius: 8px;
+
+    background: #f9fbf9;
+
+    font-size: 14px;
+
+    outline: none;
+}
+
+
+/* ==============================
+   INPUT FOCUS
+============================== */
+
+.form-group input:focus {
+    border-color: #176b2c;
+
+    background: #ffffff;
+
+    box-shadow: 0 0 0 3px rgba(23, 107, 44, 0.10);
+}
+
+
+/* ==============================
+   PLACEHOLDER
+============================== */
+
+.form-group input::placeholder {
+    color: #9aa49d;
+}
+
+
+/* ==============================
+   BUTTON
+============================== */
+
+#cropForm button {
+    grid-column: 1 / -1;
+
+    justify-self: center;
+
+    width: 190px;
+    height: 48px;
+
+    margin-top: 5px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: #176b2c;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+#cropForm button:hover {
+    background: #0f5521;
+
+    transform: translateY(-2px);
+}
+
+
+/* ==============================
+   RESULT
+============================== */
+
+#result {
+    margin-top: 20px;
+}
+
+
+.result-box {
+    padding: 18px;
+
+    border-radius: 10px;
+
+    background: #edf8ef;
+
+    border-left: 5px solid #176b2c;
+}
+
+.result-box h3 {
+    color: #176b2c;
+    margin-bottom: 5px;
+}
+
+.result-box p {
+    color: #37463a;
+}
+
+
+/* ==============================
+   TABLET
+============================== */
+
+@media (max-width: 900px) {
+
+    .main {
+        padding: 30px;
+    }
+
+    #cropForm {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* ==============================
+   MOBILE
+============================== */
+
+@media (max-width: 600px) {
+
+    .main {
+        padding: 20px;
+    }
+
+    .main h1 {
+        font-size: 25px;
+    }
+
+    .prediction-card {
+        padding: 20px;
+    }
+
+    #cropForm {
+        grid-template-columns: 1fr;
+    }
+
+    #cropForm button {
+        width: 100%;
+    }
+}
+
+/* =========================================================
+   SMARTFARM FINAL RESPONSIVE LAYER
+   ========================================================= */
+@media (max-width: 900px){
+  body{overflow-x:hidden;}
+  .main{width:100%;margin-left:0 !important;padding:0 18px !important;}
+  .sidebar{
+    position:fixed !important;
+    left:-280px !important;
+    top:0 !important;
+    height:100vh !important;
+    z-index:2000 !important;
+    transition:left .3s ease;
+  }
+  .sidebar.mobile-open{left:0 !important;}
+  .mobile-sidebar-backdrop{
+    display:block;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.35);
+    z-index:1900;
+    opacity:0;
+    visibility:hidden;
+    transition:.25s;
+  }
+  .mobile-sidebar-backdrop.show{opacity:1;visibility:visible;}
+  header{
+    width:100% !important;
+    left:0 !important;
+    padding:14px 18px !important;
+    gap:12px;
+  }
+  header h2{font-size:18px !important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  header .profile span{display:none;}
+  .menu{display:flex !important;cursor:pointer;align-items:center;justify-content:center;}
+  .welcome{grid-template-columns:1fr !important;}
+  .farm-image{min-height:230px !important;}
+  .cards{grid-template-columns:repeat(2,minmax(0,1fr)) !important;}
+  .dashboard-grid{grid-template-columns:1fr !important;}
+  .soil-grid,.analytics-grid,.market-grid,.reports-grid,.settings-main,.disease-grid{
+    grid-template-columns:1fr !important;
+  }
+  .weather-grid,.forecast-grid,.feature-grid,.stats-grid,.info-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  }
+  img,canvas{max-width:100%;}
+  table{display:block;overflow-x:auto;white-space:nowrap;max-width:100%;}
+  input,select,textarea,button{max-width:100%;}
+}
+@media (max-width: 600px){
+  .main{padding:0 12px !important;}
+  header{padding:12px !important;}
+  header h2{font-size:14px !important;}
+  .profile img{width:34px !important;height:34px !important;}
+  .cards,.weather-grid,.forecast-grid,.feature-grid,.stats-grid,.info-grid{
+    grid-template-columns:1fr !important;
+  }
+  .welcome{padding:18px !important;}
+  .welcome h1{font-size:25px !important;line-height:1.25;}
+  .card{padding:16px !important;}
+  .box{padding:16px !important;}
+  .section-heading,.recommendation-header,.soil-header,.settings-actions{
+    flex-direction:column !important;
+    align-items:flex-start !important;
+    gap:12px;
+  }
+  .prediction-card,.soil-page,.analytics-page,.market-page,.reports-page,.settings-page{
+    padding:12px !important;
+  }
+  .form-grid,.input-grid,.preference-grid{grid-template-columns:1fr !important;}
+}
