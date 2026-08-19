@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Agriculture | Decision Support System</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
+}
+
+:root{
+    --green:#159447;
+    --green-dark:#087331;
+    --green-light:#eaf8ef;
+    --lime:#8bd646;
+    --text:#17351f;
+    --muted:#65756a;
+    --white:#ffffff;
+    --border:#dce9df;
+    --shadow:0 18px 50px rgba(19,75,39,.12);
+}
+
+body{
+    background:#fff;
+    color:var(--text);
+    overflow-x:hidden;
+}
+
+a{text-decoration:none;color:inherit}
+
+button{
+    font-family:inherit;
+    cursor:pointer;
+}
+
+/* =========================
+   TOP NAVBAR
+========================= */
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:76px;
+    z-index:1000;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 5%;
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid rgba(22,128,62,.10);
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-size:21px;
+    font-weight:800;
+    color:var(--green-dark);
+}
+
+.brand-mark{
+    width:42px;
+    height:42px;
+    border-radius:13px;
+    display:grid;
+    place-items:center;
+    color:#fff;
+    font-size:23px;
+    background:linear-gradient(135deg,var(--green),var(--lime));
+    box-shadow:0 8px 20px rgba(21,148,71,.22);
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:28px;
+    list-style:none;
+}
+
+.nav-links a{
+    font-size:14px;
+    font-weight:600;
+    color:#40554a;
+    transition:.25s;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+    color:var(--green);
+}
+
+.nav-actions{
+    display:flex;
+    align-items:center;
+    gap:9px;
+}
+
+.login-btn,
+.register-btn{
+    border:0;
+    border-radius:10px;
+    padding:10px 18px;
+    font-size:13px;
+    font-weight:700;
+    transition:.25s;
+}
+
+.login-btn{
+    background:#eef8f1;
+    color:var(--green-dark);
+}
+
+.register-btn{
+    color:#fff;
+    background:var(--green);
+    box-shadow:0 8px 18px rgba(21,148,71,.20);
+}
+
+.login-btn:hover,
+.register-btn:hover{
+    transform:translateY(-2px);
+}
+
+.menu-btn{
+    width:44px;
+    height:44px;
+    border:1px solid var(--border);
+    border-radius:12px;
+    background:#fff;
+    display:grid;
+    place-items:center;
+    color:var(--green-dark);
+    font-size:22px;
+    margin-left:5px;
+}
+
+/* =========================
+   SIDE MENU
+========================= */
+.side-menu{
+    position:fixed;
+    top:0;
+    right:-330px;
+    width:310px;
+    height:100vh;
+    z-index:1300;
+    background:#fff;
+    box-shadow:-20px 0 50px rgba(0,0,0,.15);
+    padding:28px 25px;
+    transition:.35s ease;
+}
+
+.side-menu.open{right:0}
+
+.side-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding-bottom:25px;
+    border-bottom:1px solid var(--border);
+}
+
+.side-head h3{
+    color:var(--green-dark);
+    font-size:20px;
+}
+
+.close-menu{
+    width:38px;
+    height:38px;
+    border:0;
+    border-radius:10px;
+    background:var(--green-light);
+    color:var(--green-dark);
+    font-size:21px;
+}
+
+.side-list{
+    list-style:none;
+    margin-top:25px;
+}
+
+.side-list li{margin-bottom:8px}
+
+.side-list a,
+.side-dashboard{
+    width:100%;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:14px 15px;
+    border-radius:12px;
+    color:#415248;
+    font-size:14px;
+    font-weight:600;
+    border:0;
+    background:transparent;
+    text-align:left;
+}
+
+.side-list a:hover,
+.side-dashboard:hover{
+    background:var(--green-light);
+    color:var(--green-dark);
+}
+
+.side-dashboard{
+    cursor:pointer;
+}
+
+.side-note{
+    margin-top:35px;
+    padding:18px;
+    border-radius:16px;
+    background:linear-gradient(135deg,#eefaf1,#f7fce9);
+}
+
+.side-note strong{
+    display:block;
+    color:var(--green-dark);
+    margin-bottom:5px;
+}
+
+.side-note p{
+    font-size:12px;
+    color:var(--muted);
+    line-height:1.6;
+}
+
+.menu-backdrop{
+    position:fixed;
+    inset:0;
+    z-index:1200;
+    background:rgba(8,36,17,.35);
+    opacity:0;
+    visibility:hidden;
+    transition:.3s;
+}
+
+.menu-backdrop.show{
+    opacity:1;
+    visibility:visible;
+}
+
+/* =========================
+   HERO
+========================= */
+.hero{
+    min-height:100vh;
+    padding:120px 7% 70px;
+    display:grid;
+    grid-template-columns:1.02fr .98fr;
+    gap:60px;
+    align-items:center;
+    position:relative;
+    overflow:hidden;
+    background:
+        radial-gradient(circle at 85% 15%,rgba(139,214,70,.20),transparent 30%),
+        linear-gradient(135deg,#fafffb 0%,#eff9f1 100%);
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    width:500px;
+    height:500px;
+    right:-190px;
+    bottom:-230px;
+    border-radius:50%;
+    background:rgba(139,214,70,.18);
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+}
+
+.badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:8px 13px;
+    border-radius:30px;
+    background:#e8f7ec;
+    color:var(--green-dark);
+    font-size:12px;
+    font-weight:700;
+    margin-bottom:22px;
+}
+
+.hero h1{
+    font-size:clamp(42px,5.3vw,76px);
+    line-height:1.08;
+    letter-spacing:-2px;
+    font-weight:800;
+    color:#12381e;
+}
+
+.hero h1 span{
+    color:var(--green);
+}
+
+.hero-subtitle{
+    margin-top:20px;
+    max-width:600px;
+    color:var(--muted);
+    font-size:17px;
+    line-height:1.8;
+}
+
+.hero-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:13px;
+    margin-top:32px;
+}
+
+.primary-btn,
+.secondary-btn{
+    padding:14px 24px;
+    border-radius:12px;
+    border:0;
+    font-size:14px;
+    font-weight:700;
+    transition:.25s;
+}
+
+.primary-btn{
+    background:var(--green);
+    color:#fff;
+    box-shadow:0 12px 25px rgba(21,148,71,.22);
+}
+
+.secondary-btn{
+    background:#fff;
+    color:var(--green-dark);
+    border:1px solid #cfe4d5;
+}
+
+.primary-btn:hover,
+.secondary-btn:hover{
+    transform:translateY(-3px);
+}
+
+.hero-image-wrap{
+    position:relative;
+    z-index:2;
+}
+
+.hero-image{
+    width:100%;
+    max-width:590px;
+    height:540px;
+    margin-left:auto;
+    border-radius:32px;
+    overflow:hidden;
+    position:relative;
+    box-shadow:var(--shadow);
+    background:#dfeee2;
+}
+
+.hero-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.hero-image::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(180deg,transparent 55%,rgba(4,49,18,.48));
+}
+
+.floating-card{
+    position:absolute;
+    z-index:3;
+    bottom:25px;
+    left:-30px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:15px 18px;
+    background:#fff;
+    border-radius:17px;
+    box-shadow:0 15px 35px rgba(21,70,35,.18);
+}
+
+.floating-icon{
+    width:42px;
+    height:42px;
+    border-radius:12px;
+    display:grid;
+    place-items:center;
+    background:#e8f7ec;
+    font-size:21px;
+}
+
+.floating-card strong{
+    display:block;
+    font-size:13px;
+}
+
+.floating-card small{
+    color:var(--muted);
+    font-size:11px;
+}
+
+/* =========================
+   SECTION COMMON
+========================= */
+section{
+    padding:95px 7%;
+}
+
+.section-tag{
+    color:var(--green);
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:10px;
+}
+
+.section-title{
+    font-size:clamp(30px,4vw,48px);
+    color:#163d21;
+    line-height:1.15;
+}
+
+.section-desc{
+    max-width:650px;
+    margin-top:15px;
+    color:var(--muted);
+    line-height:1.8;
+}
+
+/* =========================
+   FEATURES
+========================= */
+.features{
+    background:#fff;
+}
+
+.feature-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    margin-top:45px;
+}
+
+.feature-card{
+    padding:28px;
+    border:1px solid var(--border);
+    border-radius:20px;
+    background:#fff;
+    transition:.3s;
+}
+
+.feature-card:hover{
+    transform:translateY(-7px);
+    box-shadow:var(--shadow);
+    border-color:#b9dfc3;
+}
+
+.feature-icon{
+    width:52px;
+    height:52px;
+    border-radius:15px;
+    display:grid;
+    place-items:center;
+    background:var(--green-light);
+    font-size:25px;
+    margin-bottom:20px;
+}
+
+.feature-card h3{
+    font-size:18px;
+    margin-bottom:10px;
+    color:#173c21;
+}
+
+.feature-card p{
+    font-size:13px;
+    color:var(--muted);
+    line-height:1.7;
+}
+
+/* =========================
+   ABOUT
+========================= */
+.about{
+    background:#f6fbf7;
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:.9fr 1.1fr;
+    gap:60px;
+    align-items:center;
+}
+
+.about-image{
+    height:480px;
+    border-radius:28px;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+}
+
+.about-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.about-text p{
+    margin-top:20px;
+    color:var(--muted);
+    line-height:1.9;
+}
+
+.about-points{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    margin-top:25px;
+}
+
+.about-point{
+    padding:14px;
+    border-radius:13px;
+    background:#fff;
+    border:1px solid var(--border);
+    font-size:13px;
+    font-weight:600;
+}
+
+.about-point span{color:var(--green);margin-right:6px}
+
+/* =========================
+   HOW IT WORKS
+========================= */
+.how{
+    background:#fff;
+}
+
+.steps{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    margin-top:45px;
+}
+
+.step{
+    position:relative;
+    padding:28px 22px;
+    border-radius:20px;
+    background:#fbfdfb;
+    border:1px solid var(--border);
+}
+
+.step-number{
+    font-size:12px;
+    font-weight:800;
+    color:#fff;
+    width:35px;
+    height:35px;
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    background:var(--green);
+    margin-bottom:18px;
+}
+
+.step h3{font-size:16px;margin-bottom:9px}
+.step p{font-size:12px;color:var(--muted);line-height:1.7}
+
+/* =========================
+   CONTACT
+========================= */
+.contact{
+    background:linear-gradient(135deg,#eff9f1,#fbfdf8);
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+    margin-top:40px;
+}
+
+.contact-card{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:28px;
+}
+
+.contact-item{
+    display:flex;
+    gap:15px;
+    align-items:flex-start;
+    padding:15px 0;
+    border-bottom:1px solid #edf2ee;
+}
+
+.contact-item:last-child{border-bottom:0}
+
+.contact-icon{
+    width:43px;
+    height:43px;
+    flex:0 0 43px;
+    display:grid;
+    place-items:center;
+    background:var(--green-light);
+    border-radius:12px;
+}
+
+.contact-item strong{
+    display:block;
+    font-size:13px;
+    margin-bottom:3px;
+}
+
+.contact-item span{
+    font-size:12px;
+    color:var(--muted);
+}
+
+.quick-login{
+    background:var(--green-dark);
+    color:#fff;
+}
+
+.quick-login h3{font-size:24px}
+.quick-login p{
+    color:#d9f0df;
+    font-size:13px;
+    line-height:1.7;
+    margin:12px 0 22px;
+}
+
+.quick-login .primary-btn{
+    background:#fff;
+    color:var(--green-dark);
+    box-shadow:none;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer{
+    padding:30px 7%;
+    background:#10361b;
+    color:#d7e8db;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    font-size:12px;
+}
+
+footer strong{color:#fff}
+
+/* =========================
+   MODAL
+========================= */
+.modal-overlay{
+    position:fixed;
+    inset:0;
+    z-index:2000;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    background:rgba(3,27,11,.55);
+    backdrop-filter:blur(5px);
+}
+
+.modal-overlay.show{display:flex}
+
+.modal-box{
+    width:100%;
+    max-width:430px;
+    background:#fff;
+    border-radius:24px;
+    padding:30px;
+    position:relative;
+    box-shadow:0 25px 70px rgba(0,0,0,.25);
+}
+
+.modal-box h2{
+    color:var(--green-dark);
+    margin-bottom:6px;
+}
+
+.modal-box > p{
+    color:var(--muted);
+    font-size:12px;
+    margin-bottom:22px;
+}
+
+.modal-close{
+    position:absolute;
+    right:18px;
+    top:15px;
+    width:35px;
+    height:35px;
+    border:0;
+    border-radius:10px;
+    background:#eef8f1;
+    color:var(--green-dark);
+    font-size:20px;
+}
+
+.form-group{margin-bottom:15px}
+
+.form-group label{
+    display:block;
+    font-size:12px;
+    font-weight:700;
+    margin-bottom:7px;
+}
+
+.form-group input{
+    width:100%;
+    padding:12px 13px;
+    border:1px solid #d9e7dc;
+    border-radius:10px;
+    outline:none;
+    font-size:13px;
+}
+
+.form-group input:focus{border-color:var(--green)}
+
+.modal-submit{
+    width:100%;
+    border:0;
+    padding:13px;
+    border-radius:11px;
+    color:#fff;
+    background:var(--green);
+    font-weight:700;
+    margin-top:4px;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+.reveal{
+    animation:reveal .8s ease both;
+}
+
+@keyframes reveal{
+    from{opacity:0;transform:translateY(25px)}
+    to{opacity:1;transform:translateY(0)}
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media(max-width:1000px){
+    .nav-links{display:none}
+    .hero{
+        grid-template-columns:1fr;
+        padding-top:120px;
+    }
+    .hero-image{
+        margin:0;
+        max-width:none;
+        height:440px;
+    }
+    .feature-grid{grid-template-columns:1fr 1fr}
+    .steps{grid-template-columns:1fr 1fr}
+    .about-grid{grid-template-columns:1fr}
+    .about-image{height:390px}
+}
+
+@media(max-width:650px){
+    .navbar{
+        height:68px;
+        padding:0 18px;
+    }
+    .brand{font-size:16px}
+    .brand-mark{width:37px;height:37px}
+    .nav-actions .login-btn,
+    .nav-actions .register-btn{display:none}
+    .hero{
+        padding:105px 20px 55px;
+    }
+    .hero h1{
+        font-size:43px;
+        letter-spacing:-1px;
+    }
+    .hero-subtitle{font-size:14px}
+    .hero-image{height:350px;border-radius:23px}
+    .floating-card{left:10px;bottom:12px}
+    section{padding:70px 20px}
+    .feature-grid,
+    .steps,
+    .contact-grid{grid-template-columns:1fr}
+    .about-points{grid-template-columns:1fr}
+    footer{
+        flex-direction:column;
+        text-align:center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     NAVBAR
+========================= -->
+<header class="navbar">
+    <a href="#home" class="brand">
+        <span class="brand-mark">🌱</span>
+        Smart Agriculture
+    </a>
+
+    <ul class="nav-links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#features">Explore</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+        <a href="login.html" class="login-btn">Login</a>
+        <button class="register-btn" onclick="openRegister()">Register</button>
+        <button class="menu-btn" onclick="openMenu()" aria-label="Open menu">☰</button>
+    </div>
+</header>
+
+<!-- =========================
+     SIDE MENU
+========================= -->
+<div class="menu-backdrop" id="menuBackdrop" onclick="closeMenu()"></div>
+
+<aside class="side-menu" id="sideMenu">
+    <div class="side-head">
+        <h3>Menu</h3>
+        <button class="close-menu" onclick="closeMenu()">×</button>
+    </div>
+
+    <ul class="side-list">
+        <li><a href="#home" onclick="closeMenu()">🏠 <span>Home</span></a></li>
+        <li><a href="#features" onclick="closeMenu()">🌾 <span>Explore Features</span></a></li>
+        <li><a href="#about" onclick="closeMenu()">ℹ️ <span>About Us</span></a></li>
+        <li><a href="#how" onclick="closeMenu()">⚙️ <span>How It Works</span></a></li>
+        <li><a href="#contact" onclick="closeMenu()">📞 <span>Contact Info</span></a></li>
+
+        <!-- Dashboard opens ONLY from the menu -->
+        <li>
+            <a href="dashboard.html" class="side-dashboard">
+                📊 <span>Dashboard</span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="side-note">
+        <strong>Smart Farming 🌱</strong>
+        <p>Explore the platform first. Open the Dashboard when you are ready to use the smart agriculture tools.</p>
+    </div>
+</aside>
+
+<!-- =========================
+     HERO / HOME
+========================= -->
+<main>
+
+<section class="hero" id="home">
+    <div class="hero-content reveal">
+        <div class="badge">🌿 SMART & SUSTAINABLE AGRICULTURE</div>
+
+        <h1>Grow Smarter.<br><span>Farm Better.</span></h1>
+
+        <p class="hero-subtitle">
+            A modern Smart Agriculture Decision Support System that helps farmers
+            understand weather, soil, crops, diseases and farm decisions in one place.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#features" class="primary-btn">Explore Now →</a>
+            <a href="#about" class="secondary-btn">Next →</a>
+        </div>
+    </div>
+
+    <div class="hero-image-wrap reveal">
+        <div class="hero-image">
+            <img src="../images/farm-background.jpg" alt="Smart agriculture farm">
+        </div>
+
+        <div class="floating-card">
+            <div class="floating-icon">🌱</div>
+            <div>
+                <strong>Smart Farming</strong>
+                <small>Data-driven agricultural decisions</small>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =========================
+     FEATURES / EXPLORE
+========================= -->
+<section class="features" id="features">
+    <div class="section-tag">Explore</div>
+    <h2 class="section-title">Everything you need for<br>smarter farming.</h2>
+    <p class="section-desc">
+        Explore the main capabilities of the Smart Agriculture platform before
+        entering the dashboard.
+    </p>
+
+    <div class="feature-grid">
+        <div class="feature-card">
+            <div class="feature-icon">🌦️</div>
+            <h3>Weather Intelligence</h3>
+            <p>Monitor weather conditions and understand how upcoming changes may affect farm activities.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">🌱</div>
+            <h3>Crop Prediction</h3>
+            <p>Use soil and environmental values to identify suitable crop choices for your field.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">🧪</div>
+            <h3>Soil Analysis</h3>
+            <p>Understand important soil parameters and get useful recommendations for better crop growth.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">🦠</div>
+            <h3>Disease Detection</h3>
+            <p>Support early identification of crop disease and improve timely farm management.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">📈</div>
+            <h3>Farm Analytics</h3>
+            <p>View useful farm information and trends through a clean, professional dashboard.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">💰</div>
+            <h3>Market Price</h3>
+            <p>Keep market-related information together so farmers can make more informed decisions.</p>
+        </div>
+    </div>
+</section>
+
+<!-- =========================
+     ABOUT US
+========================= -->
+<section class="about" id="about">
+    <div class="about-grid">
+        <div class="about-image">
+            <img src="../images/farm-image-1.jpg" alt="Agricultural field">
+        </div>
+
+        <div class="about-text">
+            <div class="section-tag">About Us</div>
+            <h2 class="section-title">Technology that works<br>with agriculture.</h2>
+
+            <p>
+                Smart Agriculture Decision Support System is designed to bring
+                important agricultural information into a single digital platform.
+                Instead of checking different sources separately, farmers can
+                explore weather, soil, crops, disease and market-related information
+                from one place.
+            </p>
+
+            <div class="about-points">
+                <div class="about-point"><span>✓</span> Simple farmer-friendly UI</div>
+                <div class="about-point"><span>✓</span> Data-driven decisions</div>
+                <div class="about-point"><span>✓</span> Modern dashboard</div>
+                <div class="about-point"><span>✓</span> Sustainable farming focus</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =========================
+     HOW IT WORKS
+========================= -->
+<section class="how" id="how">
+    <div class="section-tag">How It Works</div>
+    <h2 class="section-title">From field data to<br>better decisions.</h2>
+    <p class="section-desc">
+        A simple flow designed to make agricultural technology easier to understand and use.
+    </p>
+
+    <div class="steps">
+        <div class="step">
+            <div class="step-number">01</div>
+            <h3>Enter Farm Data</h3>
+            <p>Provide available soil, crop and environmental information.</p>
+        </div>
+
+        <div class="step">
+            <div class="step-number">02</div>
+            <h3>Analyze</h3>
+            <p>The system processes the available information.</p>
+        </div>
+
+        <div class="step">
+            <div class="step-number">03</div>
+            <h3>Get Insights</h3>
+            <p>View recommendations, predictions and useful farm information.</p>
+        </div>
+
+        <div class="step">
+            <div class="step-number">04</div>
+            <h3>Take Action</h3>
+            <p>Use the insights to support smarter farming decisions.</p>
+        </div>
+    </div>
+</section>
+
+<!-- =========================
+     CONTACT
+========================= -->
+<section class="contact" id="contact">
+    <div class="section-tag">Contact Info</div>
+    <h2 class="section-title">Let's build a smarter<br>future for agriculture.</h2>
+
+    <div class="contact-grid">
+        <div class="contact-card">
+            <div class="contact-item">
+                <div class="contact-icon">📧</div>
+                <div>
+                    <strong>Email</strong>
+                    <span>smartagriculture@example.com</span>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <div class="contact-icon">📱</div>
+                <div>
+                    <strong>Phone</strong>
+                    <span>+91 90000 00000</span>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <div class="contact-icon">📍</div>
+                <div>
+                    <strong>Location</strong>
+                    <span>Tamil Nadu, India</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-card quick-login">
+            <h3>Ready to explore?</h3>
+            <p>
+                Open your account and continue to the Smart Agriculture platform.
+                The full Dashboard is available from the Menu.
+            </p>
+            <a href="login.html" class="primary-btn">Login to Continue →</a>
+            <button class="primary-btn" onclick="openRegister()" style="margin-left:8px;">Register</button>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <div>© 2026 <strong>Smart Agriculture Decision Support System</strong></div>
+    <div>Growing Smarter • Farming Better 🌱</div>
+</footer>
+
+<!-- =========================
+     REGISTER MODAL
+========================= -->
+<div class="modal-overlay" id="registerModal">
+    <div class="modal-box">
+        <button class="modal-close" onclick="closeRegister()">×</button>
+        <h2>Create Account</h2>
+        <p>Register now to continue to the Smart Agriculture platform.</p>
+
+        <form onsubmit="registerDemo(event)">
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" placeholder="Enter your name" required>
+            </div>
+
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" placeholder="Enter your email" required>
+            </div>
+
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" placeholder="Create a password" required>
+            </div>
+
+            <button class="modal-submit" type="submit">Create Account</button>
+        </form>
+    </div>
+</div>
+
+<script>
+function openMenu(){
+    document.getElementById("sideMenu").classList.add("open");
+    document.getElementById("menuBackdrop").classList.add("show");
+}
+
+function closeMenu(){
+    document.getElementById("sideMenu").classList.remove("open");
+    document.getElementById("menuBackdrop").classList.remove("show");
+}
+
+function openRegister(){
+    document.getElementById("registerModal").classList.add("show");
+}
+
+function closeRegister(){
+    document.getElementById("registerModal").classList.remove("show");
+}
+
+function registerDemo(event){
+    event.preventDefault();
+    alert("Registration page is ready. Backend registration can be connected later.");
+    closeRegister();
+}
+
+document.addEventListener("keydown", function(event){
+    if(event.key === "Escape"){
+        closeMenu();
+        closeRegister();
+    }
+});
+
+/* Highlight current section in the top navigation */
+const navLinks = document.querySelectorAll(".nav-links a");
+const sections = document.querySelectorAll("section[id]");
+
+window.addEventListener("scroll", function(){
+    let current = "home";
+
+    sections.forEach(section => {
+        const top = section.offsetTop - 150;
+        if(window.scrollY >= top){
+            current = section.getAttribute("id");
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.toggle(
+            "active",
+            link.getAttribute("href") === "#" + current
+        );
+    });
+});
+</script>
+
+</body>
+</html>
