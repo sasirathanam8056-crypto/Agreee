@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Market Price</title>
+
+<link rel="stylesheet"
+href="../css/market.css">
+
+<link
+href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+rel="stylesheet">
+
+</head>
+
+
+<body>
+
+
+<div class="market-container">
+
+
+    <!-- PAGE HEADER -->
+
+    <div class="market-header">
+
+        <div>
+
+            <h1>🌾 Market Prices</h1>
+
+            <p>
+                Today's agricultural market prices
+            </p>
+
+        </div>
+
+
+        <button
+        id="updatePriceBtn">
+
+            🔄 Update Prices
+
+        </button>
+
+    </div>
+
+
+
+    <!-- MARKET INFO -->
+
+    <div class="market-info">
+
+
+        <div class="info-card">
+
+            <span>📍 Market</span>
+
+            <strong>
+                Koyambedu Market
+            </strong>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <span>📅 Last Updated</span>
+
+            <strong id="lastUpdated">
+
+                Today, 10:30 AM
+
+            </strong>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <span>🌱 Crops Tracked</span>
+
+            <strong>
+
+                12 Crops
+
+            </strong>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- PRICE CARDS -->
+
+    <div class="price-grid">
+
+
+        <!-- Rice -->
+
+        <div class="price-card">
+
+            <div class="crop-icon">
+                🌾
+            </div>
+
+            <div>
+
+                <h3>Rice</h3>
+
+                <p>₹ / Quintal</p>
+
+            </div>
+
+            <h2
+            id="ricePrice">
+
+                ₹3,200
+
+            </h2>
+
+            <span class="up">
+
+                ↑ 4.5%
+
+            </span>
+
+        </div>
+
+
+
+        <!-- Wheat -->
+
+        <div class="price-card">
+
+            <div class="crop-icon">
+                🌾
+            </div>
+
+            <div>
+
+                <h3>Wheat</h3>
+
+                <p>₹ / Quintal</p>
+
+            </div>
+
+            <h2
+            id="wheatPrice">
+
+                ₹2,650
+
+            </h2>
+
+            <span class="up">
+
+                ↑ 2.8%
+
+            </span>
+
+        </div>
+
+
+
+        <!-- Tomato -->
+
+        <div class="price-card">
+
+            <div class="crop-icon">
+                🍅
+            </div>
+
+            <div>
+
+                <h3>Tomato</h3>
+
+                <p>₹ / Quintal</p>
+
+            </div>
+
+            <h2
+            id="tomatoPrice">
+
+                ₹2,850
+
+            </h2>
+
+            <span class="down">
+
+                ↓ 1.6%
+
+            </span>
+
+        </div>
+
+
+
+        <!-- Onion -->
+
+        <div class="price-card">
+
+            <div class="crop-icon">
+                🧅
+            </div>
+
+            <div>
+
+                <h3>Onion</h3>
+
+                <p>₹ / Quintal</p>
+
+            </div>
+
+            <h2
+            id="onionPrice">
+
+                ₹3,100
+
+            </h2>
+
+            <span class="up">
+
+                ↑ 3.2%
+
+            </span>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- PRICE TREND -->
+
+    <div class="trend-section">
+
+
+        <div class="trend-header">
+
+            <div>
+
+                <h2>
+                    📈 Market Price Trend
+                </h2>
+
+                <p>
+                    Average crop price movement
+                </p>
+
+            </div>
+
+
+            <select id="cropSelect">
+
+                <option value="rice">
+                    Rice
+                </option>
+
+                <option value="wheat">
+                    Wheat
+                </option>
+
+                <option value="tomato">
+                    Tomato
+                </option>
+
+                <option value="onion">
+                    Onion
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="chart">
+
+            <div class="chart-line"></div>
+
+            <div class="point p1"></div>
+            <div class="point p2"></div>
+            <div class="point p3"></div>
+            <div class="point p4"></div>
+            <div class="point p5"></div>
+            <div class="point p6"></div>
+
+        </div>
+
+
+        <div class="days">
+
+            <span>Mon</span>
+
+            <span>Tue</span>
+
+            <span>Wed</span>
+
+            <span>Thu</span>
+
+            <span>Fri</span>
+
+            <span>Sat</span>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- MARKET TABLE -->
+
+    <div class="market-table">
+
+        <h2>
+            🏪 Today's Market Details
+        </h2>
+
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Crop</th>
+
+                    <th>Market</th>
+
+                    <th>Min Price</th>
+
+                    <th>Max Price</th>
+
+                    <th>Average</th>
+
+                    <th>Trend</th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+                <tr>
+
+                    <td>🌾 Rice</td>
+
+                    <td>Koyambedu</td>
+
+                    <td>₹3,000</td>
+
+                    <td>₹3,400</td>
+
+                    <td>₹3,200</td>
+
+                    <td class="up">
+                        ↑ 4.5%
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>🌾 Wheat</td>
+
+                    <td>Koyambedu</td>
+
+                    <td>₹2,500</td>
+
+                    <td>₹2,800</td>
+
+                    <td>₹2,650</td>
+
+                    <td class="up">
+                        ↑ 2.8%
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>🍅 Tomato</td>
+
+                    <td>Koyambedu</td>
+
+                    <td>₹2,600</td>
+
+                    <td>₹3,000</td>
+
+                    <td>₹2,850</td>
+
+                    <td class="down">
+                        ↓ 1.6%
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>🧅 Onion</td>
+
+                    <td>Koyambedu</td>
+
+                    <td>₹2,900</td>
+
+                    <td>₹3,300</td>
+
+                    <td>₹3,100</td>
+
+                    <td class="up">
+                        ↑ 3.2%
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+</div>
+
+
+<script src="../js/market.js"></script>
+
+</body>
+
+</html>
