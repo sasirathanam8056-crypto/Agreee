@@ -1,0 +1,51 @@
+<div class="settings-container">
+    <div class="settings-hero">
+        <div>
+            <span>ACCOUNT CONTROL CENTER</span>
+            <h1><i class="fa-solid fa-sliders"></i> Settings</h1>
+            <p>Personalize your Smart Agriculture dashboard.</p>
+        </div>
+        <div class="settings-status"><i class="fa-solid fa-circle"></i> System Online</div>
+    </div>
+
+    <div class="settings-layout">
+        <div class="settings-profile">
+            <div class="settings-avatar"><i class="fa-solid fa-user"></i></div>
+            <h2>Farmer Profile</h2>
+            <p>Manage your basic farm details.</p>
+            <div class="profile-mini"><i class="fa-solid fa-shield-halved"></i> Secure account</div>
+        </div>
+
+        <div class="settings-main">
+            <div class="setting-card">
+                <div class="setting-heading"><i class="fa-solid fa-user-pen"></i><div><h3>Profile Information</h3><p>Update your farmer details.</p></div></div>
+                <div class="settings-form">
+                    <label>Farmer Name<input id="farmerName" type="text" value="Farmer"></label>
+                    <label>Farm Location<input id="farmLocation" type="text" value="Chennai"></label>
+                    <label>Farm Type<select id="farmType"><option>Crop Farm</option><option>Organic Farm</option><option>Mixed Farm</option></select></label>
+                </div>
+            </div>
+
+            <div class="setting-card">
+                <div class="setting-heading"><i class="fa-solid fa-bell"></i><div><h3>Notifications</h3><p>Choose what you want to receive.</p></div></div>
+                <div class="toggle-row"><div><strong>Weather Alerts</strong><small>Rain and extreme weather notifications</small></div><label class="switch"><input type="checkbox" checked><span></span></label></div>
+                <div class="toggle-row"><div><strong>Crop Alerts</strong><small>Disease and crop health reminders</small></div><label class="switch"><input type="checkbox" checked><span></span></label></div>
+                <div class="toggle-row"><div><strong>Market Updates</strong><small>Price change notifications</small></div><label class="switch"><input type="checkbox"><span></span></label></div>
+            </div>
+
+            <div class="setting-card">
+                <div class="setting-heading"><i class="fa-solid fa-palette"></i><div><h3>Dashboard Preferences</h3><p>Customize your experience.</p></div></div>
+                <div class="preference-grid">
+                    <label>Temperature Unit<select id="temperatureUnit"><option>°C Celsius</option><option>°F Fahrenheit</option></select></label>
+                    <label>Default View<select id="defaultView"><option>Dashboard</option><option>Farm Analytics</option><option>Weather</option></select></label>
+                </div>
+            </div>
+
+            <div class="settings-actions">
+                <button id="resetSettingsBtn" class="secondary-setting">Reset</button>
+                <button id="saveSettingsBtn" class="primary-setting"><i class="fa-solid fa-check"></i> Save Changes</button>
+            </div>
+            <div id="settingsToast" class="settings-toast"></div>
+        </div>
+    </div>
+</div>
