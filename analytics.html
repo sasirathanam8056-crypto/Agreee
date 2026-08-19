@@ -1,0 +1,355 @@
+<div class="analytics-container">
+
+    <!-- HEADER -->
+
+    <div class="analytics-header">
+
+        <div>
+            <span class="small-title">SMART FARM</span>
+
+            <h1>
+                <i class="fa-solid fa-chart-line"></i>
+                Farm Analytics
+            </h1>
+
+            <p>
+                Monitor your farm performance and make data-driven decisions.
+            </p>
+        </div>
+
+
+        <div class="period-selector">
+
+            <button class="period active" data-period="week">
+                7 Days
+            </button>
+
+            <button class="period" data-period="month">
+                30 Days
+            </button>
+
+            <button class="period" data-period="year">
+                1 Year
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================= -->
+    <!-- ANALYTICS CARDS -->
+    <!-- ========================= -->
+
+    <div class="analytics-cards">
+
+        <div class="analytics-card">
+
+            <div class="card-icon">
+                <i class="fa-solid fa-heart-pulse"></i>
+            </div>
+
+            <div>
+
+                <span>Farm Health</span>
+
+                <h2>
+                    <span class="counter" data-target="87">0</span>%
+                </h2>
+
+                <small class="positive">
+                    <i class="fa-solid fa-arrow-up"></i>
+                    6.4% this week
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="analytics-card">
+
+            <div class="card-icon">
+                <i class="fa-solid fa-seedling"></i>
+            </div>
+
+            <div>
+
+                <span>Crop Growth</span>
+
+                <h2>
+                    <span class="counter" data-target="82">0</span>%
+                </h2>
+
+                <small class="positive">
+                    <i class="fa-solid fa-arrow-up"></i>
+                    Healthy growth
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="analytics-card">
+
+            <div class="card-icon">
+                <i class="fa-solid fa-wheat-awn"></i>
+            </div>
+
+            <div>
+
+                <span>Estimated Yield</span>
+
+                <h2>
+                    <span class="counter" data-target="4.8">0</span>
+                    T
+                </h2>
+
+                <small>
+                    Expected harvest
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="analytics-card">
+
+            <div class="card-icon">
+                <i class="fa-solid fa-droplet"></i>
+            </div>
+
+            <div>
+
+                <span>Water Efficiency</span>
+
+                <h2>
+                    <span class="counter" data-target="76">0</span>%
+                </h2>
+
+                <small class="positive">
+                    Optimal usage
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================= -->
+    <!-- CHART SECTION -->
+    <!-- ========================= -->
+
+    <div class="chart-grid">
+
+
+        <!-- CROP GROWTH -->
+
+        <div class="chart-box large">
+
+            <div class="chart-heading">
+
+                <div>
+                    <h2>🌱 Crop Growth</h2>
+                    <p>Growth performance over time</p>
+                </div>
+
+                <span class="chart-badge">
+                    +12.8%
+                </span>
+
+            </div>
+
+            <div class="chart-area">
+
+                <canvas id="growthChart"></canvas>
+
+            </div>
+
+        </div>
+
+
+        <!-- SOIL MOISTURE -->
+
+        <div class="chart-box">
+
+            <div class="chart-heading">
+
+                <div>
+                    <h2>💧 Soil Moisture</h2>
+                    <p>Recent moisture levels</p>
+                </div>
+
+            </div>
+
+            <div class="chart-area">
+
+                <canvas id="moistureChart"></canvas>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- ========================= -->
+    <!-- SECOND CHART -->
+    <!-- ========================= -->
+
+    <div class="chart-grid">
+
+
+        <!-- TEMPERATURE -->
+
+        <div class="chart-box">
+
+            <div class="chart-heading">
+
+                <div>
+                    <h2>🌡️ Temperature</h2>
+                    <p>Daily temperature trend</p>
+                </div>
+
+            </div>
+
+            <div class="chart-area">
+
+                <canvas id="temperatureChart"></canvas>
+
+            </div>
+
+        </div>
+
+
+        <!-- CROP PERFORMANCE -->
+
+        <div class="chart-box">
+
+            <div class="chart-heading">
+
+                <div>
+                    <h2>🌾 Crop Performance</h2>
+                    <p>Current crop condition</p>
+                </div>
+
+            </div>
+
+
+            <div class="crop-performance">
+
+                <div class="crop-row">
+
+                    <div class="crop-info">
+
+                        <span>Rice</span>
+
+                        <strong>92%</strong>
+
+                    </div>
+
+                    <div class="progress">
+
+                        <span style="width:92%"></span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="crop-row">
+
+                    <div class="crop-info">
+
+                        <span>Tomato</span>
+
+                        <strong>84%</strong>
+
+                    </div>
+
+                    <div class="progress">
+
+                        <span style="width:84%"></span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="crop-row">
+
+                    <div class="crop-info">
+
+                        <span>Maize</span>
+
+                        <strong>78%</strong>
+
+                    </div>
+
+                    <div class="progress">
+
+                        <span style="width:78%"></span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="crop-row">
+
+                    <div class="crop-info">
+
+                        <span>Cotton</span>
+
+                        <strong>69%</strong>
+
+                    </div>
+
+                    <div class="progress">
+
+                        <span style="width:69%"></span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================= -->
+    <!-- FARM SUMMARY -->
+    <!-- ========================= -->
+
+    <div class="summary-box">
+
+        <div class="summary-icon">
+
+            <i class="fa-solid fa-lightbulb"></i>
+
+        </div>
+
+        <div>
+
+            <h3>Smart Farm Insight</h3>
+
+            <p>
+                Your farm is currently performing well.
+                Crop growth and soil moisture are within healthy ranges.
+                Maintaining the current irrigation schedule can improve
+                overall yield.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
