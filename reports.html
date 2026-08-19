@@ -1,0 +1,71 @@
+<div class="reports-container">
+    <div class="reports-hero">
+        <div>
+            <span class="report-kicker">SMART FARM DOCUMENT CENTER</span>
+            <h1><i class="fa-solid fa-file-circle-check"></i> Farm Reports</h1>
+            <p>View visual farm reports, crop performance and field insights.</p>
+        </div>
+        <button id="printReportBtn" class="report-action"><i class="fa-solid fa-print"></i> Print Report</button>
+    </div>
+
+    <div class="report-summary">
+        <div><span>Farm Health</span><strong>87%</strong><small>Excellent</small></div>
+        <div><span>Crop Growth</span><strong>82%</strong><small>Healthy</small></div>
+        <div><span>Water Efficiency</span><strong>76%</strong><small>Optimal</small></div>
+        <div><span>Estimated Yield</span><strong>4.8 T</strong><small>Expected</small></div>
+    </div>
+
+    <div class="report-section-title">
+        <div>
+            <span>VISUAL REPORTS</span>
+            <h2>Explore Farm Images</h2>
+        </div>
+        <p>Click any image to view it larger.</p>
+    </div>
+
+    <div class="report-gallery">
+        <button class="report-image-card" data-image="../images/form overview.jpeg" data-title="Farm Overview">
+            <img src="../images/form overview.jpeg" alt="Farm overview">
+            <span><i class="fa-solid fa-expand"></i> Farm Overview</span>
+        </button>
+
+        <button class="report-image-card" data-image="../images/farm-image-1.jpg" data-title="Field Report">
+            <img src="../images/farm-image-1.jpg" alt="Field report">
+            <span><i class="fa-solid fa-expand"></i> Field Report</span>
+        </button>
+
+        <button class="report-image-card" data-image="../images/environment-landscape-agricultural-field-sunset-countryside-scene_124507-16101.avif" data-title="Farm Environment">
+            <img src="../images/environment-landscape-agricultural-field-sunset-countryside-scene_124507-16101.avif" alt="Farm environment">
+            <span><i class="fa-solid fa-expand"></i> Farm Environment</span>
+        </button>
+
+        <button class="report-image-card" data-image="../images/1_BND0zVNGrZrKL3EHA9gdYA.png" data-title="Crop Monitoring">
+            <img src="../images/1_BND0zVNGrZrKL3EHA9gdYA.png" alt="Crop monitoring">
+            <span><i class="fa-solid fa-expand"></i> Crop Monitoring</span>
+        </button>
+    </div>
+
+    <div class="report-insights">
+        <div>
+            <i class="fa-solid fa-leaf"></i>
+            <h3>Crop Insight</h3>
+            <p>Rice is currently showing the strongest performance at 92%.</p>
+        </div>
+        <div>
+            <i class="fa-solid fa-droplet"></i>
+            <h3>Water Insight</h3>
+            <p>Current moisture levels are within the recommended range.</p>
+        </div>
+        <div>
+            <i class="fa-solid fa-cloud-sun"></i>
+            <h3>Weather Insight</h3>
+            <p>Maintain the current irrigation plan and monitor rainfall.</p>
+        </div>
+    </div>
+</div>
+
+<div id="reportLightbox" class="report-lightbox">
+    <button id="closeReportLightbox" aria-label="Close">&times;</button>
+    <img id="reportLightboxImage" src="" alt="">
+    <h3 id="reportLightboxTitle"></h3>
+</div>
