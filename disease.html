@@ -1,0 +1,375 @@
+<div class="disease-page">
+
+    <!-- HEADER -->
+
+    <div class="disease-header">
+
+        <div>
+            <span class="disease-tag">
+                AI PLANT HEALTH INTELLIGENCE
+            </span>
+
+            <h1>🌿 Disease Detection</h1>
+
+            <p>
+                Detect crop diseases early and protect your farm.
+            </p>
+        </div>
+
+        <div class="ai-status">
+            <span></span>
+            AI Scanner Ready
+        </div>
+
+    </div>
+
+
+    <!-- MAIN SCANNER -->
+
+    <div class="scanner-layout">
+
+
+        <!-- VIDEO -->
+
+        <div class="video-card">
+
+            <div class="video-header">
+
+                <div>
+                    <span>LIVE FARM MONITOR</span>
+                    <h2>Plant Health Scanner</h2>
+                </div>
+
+                <div class="live-badge">
+                    <span></span>
+                    LIVE
+                </div>
+
+            </div>
+
+
+            <div class="video-container">
+
+                <video
+                    id="farmVideo"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                >
+
+                    <source
+                        src="../video/18809430-uhd_3840_2160_30fps.mp4"
+                        type="video/mp4"
+                    >
+
+                    Your browser does not support video.
+
+                </video>
+
+
+                <div class="scan-overlay">
+
+                    <div class="corner top-left"></div>
+                    <div class="corner top-right"></div>
+                    <div class="corner bottom-left"></div>
+                    <div class="corner bottom-right"></div>
+
+                    <div class="scan-line"></div>
+
+                </div>
+
+
+                <div class="video-status">
+                    🌱 Monitoring Crop Health
+                </div>
+
+            </div>
+
+
+            <!-- VIDEO CONTROLS -->
+
+            <div class="video-controls">
+
+                <button id="playVideo">
+                    ▶
+                </button>
+
+                <button id="pauseVideo">
+                    ⏸
+                </button>
+
+                <button id="muteVideo">
+                    🔇
+                </button>
+
+                <span>
+                    Live Crop Monitoring
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- UPLOAD -->
+
+        <div class="upload-card">
+
+            <div class="upload-icon">
+                📷
+            </div>
+
+            <h2>Scan Your Plant</h2>
+
+            <p>
+                Upload a clear image of the affected leaf.
+            </p>
+
+
+            <label class="upload-area">
+
+                <input
+                    type="file"
+                    id="leafImage"
+                    accept="image/*"
+                >
+
+                <div>
+
+                    <span>📤</span>
+
+                    <strong>
+                        Click to Upload
+                    </strong>
+
+                    <small>
+                        JPG / PNG • Max 5MB
+                    </small>
+
+                </div>
+
+            </label>
+
+
+            <!-- IMAGE PREVIEW -->
+
+            <div
+                id="imagePreview"
+                class="image-preview"
+            ></div>
+
+
+            <button
+                id="scanBtn"
+                class="scan-btn"
+            >
+
+                🔍 Scan for Disease
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- SCANNING -->
+
+    <div
+        id="scanningBox"
+        class="scanning-box"
+        style="display:none;"
+    >
+
+        <div class="scanner-animation">
+
+            <div></div>
+
+        </div>
+
+        <h2>Analyzing Plant...</h2>
+
+        <p>
+            AI is checking leaf patterns and disease symptoms.
+        </p>
+
+        <div class="loading-bar">
+            <div id="loadingProgress"></div>
+        </div>
+
+        <span id="scanPercentage">
+            0%
+        </span>
+
+    </div>
+
+
+    <!-- RESULT -->
+
+    <div
+        id="diseaseResult"
+        class="disease-result"
+        style="display:none;"
+    >
+
+        <div class="result-header">
+
+            <div>
+
+                <span>
+                    AI ANALYSIS RESULT
+                </span>
+
+                <h2>
+                    ⚠️ Leaf Disease Detected
+                </h2>
+
+            </div>
+
+            <div class="confidence">
+
+                <strong>
+                    94%
+                </strong>
+
+                <small>
+                    Confidence
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="result-grid">
+
+
+            <div class="result-image">
+
+                <img
+                    id="resultImage"
+                    src=""
+                    alt="Leaf"
+                >
+
+            </div>
+
+
+            <div class="disease-info">
+
+                <span class="disease-label">
+                    DETECTED DISEASE
+                </span>
+
+                <h1>
+                    🍃 Leaf Blight
+                </h1>
+
+                <p>
+                    Brown spots and damaged leaf areas
+                    indicate possible leaf blight infection.
+                </p>
+
+
+                <div class="treatment">
+
+                    <h3>
+                        💊 Recommended Treatment
+                    </h3>
+
+                    <p>
+                        Remove affected leaves and apply
+                        appropriate fungicide. Improve air
+                        circulation around the crop.
+                    </p>
+
+                </div>
+
+
+                <div class="prevention">
+
+                    <h3>
+                        🛡️ Prevention
+                    </h3>
+
+                    <ul>
+
+                        <li>
+                            Avoid excessive watering
+                        </li>
+
+                        <li>
+                            Maintain proper plant spacing
+                        </li>
+
+                        <li>
+                            Remove infected leaves
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <button
+                    id="scanAgain"
+                    class="scan-again"
+                >
+
+                    🔄 Scan Another Leaf
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- QUICK TIPS -->
+
+    <div class="disease-tips">
+
+        <div>
+
+            <span>01</span>
+
+            <h3>Capture Clearly</h3>
+
+            <p>
+                Take a clear photo of the affected leaf.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <span>02</span>
+
+            <h3>AI Analysis</h3>
+
+            <p>
+                Our scanner analyzes visible symptoms.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <span>03</span>
+
+            <h3>Take Action</h3>
+
+            <p>
+                Follow the recommended treatment.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
