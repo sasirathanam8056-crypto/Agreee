@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Soil Analysis</title>
+
+    <link rel="stylesheet" href="../css/soil.css">
+</head>
+
+<body>
+
+<div class="soil-page">
+
+    <!-- Header -->
+    <div class="soil-header">
+
+        <div>
+            <span class="soil-tag">SMART SOIL INTELLIGENCE</span>
+            <h1>🌱 Soil Analysis</h1>
+            <p>Understand your soil health and improve crop productivity.</p>
+        </div>
+
+        <div class="soil-status">
+            <span class="status-dot"></span>
+            Soil Monitoring Active
+        </div>
+
+    </div>
+
+
+    <!-- Soil Overview -->
+    <div class="soil-overview">
+
+        <div class="health-card">
+
+            <div class="health-title">
+                <span>Overall Soil Health</span>
+                <span class="health-icon">🌿</span>
+            </div>
+
+            <div class="health-score">
+                <strong id="healthScore">78</strong>
+                <span>/100</span>
+            </div>
+
+            <div class="health-bar">
+                <div class="health-fill" style="width: 78%;"></div>
+            </div>
+
+            <p class="health-good">
+                ✓ Good Soil Condition
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <span class="info-icon">🧪</span>
+
+            <div>
+                <small>Soil Type</small>
+                <h3 id="soilType">Black Soil</h3>
+            </div>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <span class="info-icon">⚗️</span>
+
+            <div>
+                <small>pH Level</small>
+                <h3 id="phValue">6.8</h3>
+            </div>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <span class="info-icon">💧</span>
+
+            <div>
+                <small>Moisture</small>
+                <h3 id="moistureValue">64%</h3>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Main Grid -->
+    <div class="soil-grid">
+
+
+        <!-- Nutrient Analysis -->
+        <div class="nutrient-card">
+
+            <div class="section-heading">
+                <div>
+                    <span>SOIL NUTRIENTS</span>
+                    <h2>Nutrient Analysis</h2>
+                </div>
+
+                <button onclick="analyzeSoil()">Analyze</button>
+            </div>
+
+
+            <div class="nutrient-list">
+
+                <!-- Nitrogen -->
+                <div class="nutrient">
+
+                    <div class="nutrient-top">
+                        <span>🌿 Nitrogen</span>
+                        <strong id="nValue">72%</strong>
+                    </div>
+
+                    <div class="progress">
+                        <div class="progress-fill nitrogen"
+                             id="nitrogenBar"
+                             style="width:72%;">
+                        </div>
+                    </div>
+
+                    <small>Good</small>
+
+                </div>
+
+
+                <!-- Phosphorus -->
+                <div class="nutrient">
+
+                    <div class="nutrient-top">
+                        <span>🌱 Phosphorus</span>
+                        <strong id="pValue">58%</strong>
+                    </div>
+
+                    <div class="progress">
+                        <div class="progress-fill phosphorus"
+                             id="phosphorusBar"
+                             style="width:58%;">
+                        </div>
+                    </div>
+
+                    <small>Moderate</small>
+
+                </div>
+
+
+                <!-- Potassium -->
+                <div class="nutrient">
+
+                    <div class="nutrient-top">
+                        <span>🍃 Potassium</span>
+                        <strong id="kValue">81%</strong>
+                    </div>
+
+                    <div class="progress">
+                        <div class="progress-fill potassium"
+                             id="potassiumBar"
+                             style="width:81%;">
+                        </div>
+                    </div>
+
+                    <small>Excellent</small>
+
+                </div>
+
+
+                <!-- Organic Matter -->
+                <div class="nutrient">
+
+                    <div class="nutrient-top">
+                        <span>🌾 Organic Matter</span>
+                        <strong>67%</strong>
+                    </div>
+
+                    <div class="progress">
+                        <div class="progress-fill organic"
+                             style="width:67%;">
+                        </div>
+                    </div>
+
+                    <small>Good</small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Soil Composition -->
+        <div class="composition-card">
+
+            <div class="section-heading">
+                <div>
+                    <span>COMPOSITION</span>
+                    <h2>Soil Composition</h2>
+                </div>
+            </div>
+
+
+            <div class="composition">
+
+                <div class="circle-chart">
+
+                    <div class="circle-inner">
+                        <strong>68%</strong>
+                        <span>Healthy</span>
+                    </div>
+
+                </div>
+
+
+                <div class="legend">
+
+                    <div>
+                        <span class="legend-dot sand"></span>
+                        <p>Sand</p>
+                        <strong>32%</strong>
+                    </div>
+
+                    <div>
+                        <span class="legend-dot clay"></span>
+                        <p>Clay</p>
+                        <strong>48%</strong>
+                    </div>
+
+                    <div>
+                        <span class="legend-dot silt"></span>
+                        <p>Silt</p>
+                        <strong>20%</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Recommendation -->
+        <div class="recommendation-card">
+
+            <div class="recommendation-header">
+                <div>
+                    <span>SMART RECOMMENDATION</span>
+                    <h2>What Your Soil Needs</h2>
+                </div>
+
+                <span class="ai-icon">✦</span>
+            </div>
+
+
+            <div class="recommendation-list">
+
+                <div class="recommendation-item">
+                    <span>💧</span>
+                    <div>
+                        <strong>Maintain Moisture</strong>
+                        <p>Current moisture level is suitable for most crops.</p>
+                    </div>
+                </div>
+
+
+                <div class="recommendation-item">
+                    <span>🌿</span>
+                    <div>
+                        <strong>Increase Phosphorus</strong>
+                        <p>Consider phosphorus-rich organic fertilizer.</p>
+                    </div>
+                </div>
+
+
+                <div class="recommendation-item">
+                    <span>♻️</span>
+                    <div>
+                        <strong>Add Organic Matter</strong>
+                        <p>Compost can improve soil structure and fertility.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Soil Metrics -->
+        <div class="metrics-card">
+
+            <div class="section-heading">
+                <div>
+                    <span>SOIL METRICS</span>
+                    <h2>Environmental Indicators</h2>
+                </div>
+            </div>
+
+
+            <div class="metrics">
+
+                <div class="metric">
+                    <span>🌡️</span>
+                    <div>
+                        <small>Soil Temperature</small>
+                        <strong>27°C</strong>
+                    </div>
+                </div>
+
+                <div class="metric">
+                    <span>💦</span>
+                    <div>
+                        <small>Water Retention</small>
+                        <strong>74%</strong>
+                    </div>
+                </div>
+
+                <div class="metric">
+                    <span>🧬</span>
+                    <div>
+                        <small>Soil Fertility</small>
+                        <strong>82%</strong>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="../js/soil.js"></script>
+
+</body>
+</html>
