@@ -1,0 +1,2511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Smart Agriculture Dashboard</title>
+<link rel="stylesheet" href="../css/dashboard.css">
+<link rel="stylesheet" href="../css/soil.css">
+<link rel="stylesheet" href="../css/weather.css">
+<link rel="stylesheet" href="../css/disease.css">
+<link rel="stylesheet" href="../css/analytics.css">
+<link rel="stylesheet" href="../css/market.css">
+<link rel="stylesheet" href="../css/reports.css">
+<link rel="stylesheet" href="../css/settings.css">
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+    
+<!-- Sidebar -->
+
+<div class="mobile-sidebar-backdrop" id="mobileSidebarBackdrop" onclick="closeMobileSidebar()"></div>
+<div class="sidebar">
+
+    <div class="logo">
+        <i class="fa-solid fa-seedling"></i>
+        <span>SmartFarm</span>
+    </div>
+
+
+    <ul>
+
+
+       <li id="dashboardBtn" class="active">
+    <i class="fa-solid fa-house"></i>
+    Dashboard
+</li>
+
+<li id="cropBtn">
+    <i class="fa-solid fa-wheat-awn"></i>
+    Crop Prediction
+</li>
+
+<li id="soilBtn">
+    <i class="fa-solid fa-droplet"></i>
+    Soil Analysis
+</li>
+
+<li id="weatherBtn">
+    <i class="fa-solid fa-cloud-sun"></i>
+    Weather
+</li>
+
+<li id="diseaseBtn">
+    <i class="fa-solid fa-virus"></i>
+    Disease Detection
+</li>
+
+<li id="analyticsBtn">
+    <i class="fa-solid fa-chart-line"></i>
+    Farm Analytics
+</li>
+
+<li id="marketBtn">
+    <i class="fa-solid fa-money-bill-trend-up"></i>
+    Market Price
+</li>
+
+<li id="reportsBtn">
+    <i class="fa-solid fa-file-lines"></i>
+    Reports
+</li>
+
+<li id="settingsBtn">
+    <i class="fa-solid fa-gear"></i>
+    Settings
+</li>
+
+<li id="logoutBtn">
+    <i class="fa-solid fa-right-from-bracket"></i>
+    Logout
+</li>
+
+    </ul>
+
+
+</div>
+
+
+
+<!-- Main Content -->
+
+<div class="main">
+
+
+<!-- Top Navbar -->
+
+<header>
+
+
+    <div class="menu">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+
+
+    <h2>
+        Smart Agriculture Decision Support System
+    </h2>
+
+
+    <div class="profile">
+
+        <i class="fa-solid fa-bell"></i>
+
+        <img src="../images/logo.png">
+
+        <span>
+            Farmer
+        </span>
+
+    </div>
+</header>
+
+
+<div id="dashboardHome">
+
+
+<!-- Welcome Section -->
+
+
+<section class="welcome">
+
+
+<div>
+
+<h1>
+Welcome Back, Farmer 👋
+</h1>
+
+
+<p>
+Monitor your farm, analyze crops and make smart decisions.
+</p>
+
+
+<button>
+Start Monitoring
+</button>
+
+
+</div>
+
+
+
+<div class="farm-image">
+
+<img src="../images/farm.png">
+
+</div>
+
+
+</section>
+
+<!-- Cards -->
+
+
+<section class="cards">
+
+
+<div class="card">
+
+<i class="fa-solid fa-seedling"></i>
+
+<div>
+
+<h3>
+Active Crops
+</h3>
+
+<h1>
+25
+</h1>
+
+<p>
++8% Healthy Growth
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-temperature-half"></i>
+
+<div>
+
+<h3>
+Temperature
+</h3>
+
+<h1>
+29°C
+</h1>
+
+<p>
+Normal Weather
+</p>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<i class="fa-solid fa-water"></i>
+
+<div>
+
+<h3>
+Soil Moisture
+</h3>
+
+<h1>
+68%
+</h1>
+
+<p>
+Optimal Level
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-triangle-exclamation"></i>
+
+<div>
+
+<h3>
+Alerts
+</h3>
+
+<h1>
+03
+</h1>
+
+<p>
+Need Attention
+</p>
+
+</div>
+
+</div>
+
+
+</section>
+
+<!-- Dashboard Content -->
+
+
+<div class="dashboard-grid">
+
+
+<!-- Weather -->
+
+<div class="box">
+
+<h2>
+🌦 Today's Weather
+</h2>
+
+
+<div class="weather">
+
+
+<h1>
+29°C
+</h1>
+
+
+<p>
+Chennai
+</p>
+
+
+<span>
+Humidity : 70%
+</span>
+
+<br>
+
+<span>
+Wind : 12 km/h
+</span>
+
+
+</div>
+
+
+</div>
+
+
+
+<!-- Recommendation -->
+
+
+<div class="box">
+
+
+<h2>
+🤖 Smart Recommendation
+</h2>
+
+
+<ul>
+
+<li>
+✔ Irrigate crops evening
+</li>
+
+<li>
+✔ Apply fertilizer tomorrow
+</li>
+
+<li>
+✔ Rain expected
+</li>
+
+<li>
+✔ Check pest condition
+</li>
+
+
+</ul>
+
+
+</div>
+
+
+
+
+
+<!-- Notifications -->
+
+
+<div class="box">
+
+
+<h2>
+🔔 Recent Alerts
+</h2>
+
+
+<div class="notification">
+
+<p>
+⚠ Soil moisture is low
+</p>
+
+</div>
+
+
+<div class="notification">
+
+<p>
+🌧 Heavy rain expected
+</p>
+
+</div>
+
+
+<div class="notification">
+
+<p>
+🐛 Pest risk detected
+</p>
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+</div>
+
+<div id="cropPage" style="display:none;">
+
+    <h1>🌾 Crop Prediction</h1>
+
+    <div class="prediction-card">
+
+        <h3>Enter Farm Details</h3>
+
+        <form id="cropForm">
+
+            <label>Nitrogen</label>
+            <input type="number" id="nitrogen">
+
+            <label>Phosphorus</label>
+            <input type="number" id="phosphorus">
+
+            <label>Potassium</label>
+            <input type="number" id="potassium">
+
+            <label>Temperature</label>
+            <input type="number" id="temperature">
+
+            <label>Humidity</label>
+            <input type="number" id="humidity">
+
+            <label>Rainfall</label>
+            <input type="number" id="rainfall">
+
+            <button type="submit">Predict Crop</button>
+
+        </form>
+
+        <div id="result"></div>
+
+    </div>
+
+</div>
+<div id="soilPage" style="display:none;">
+
+    <!-- Soil Analysis Content -->
+
+    <div class="soil-page">
+
+        <div class="soil-header">
+
+            <div>
+                <span class="soil-tag">SMART SOIL INTELLIGENCE</span>
+
+                <h1>🌱 Soil Analysis</h1>
+
+                <p>
+                    Understand your soil health and improve crop productivity.
+                </p>
+            </div>
+
+            <div class="soil-status">
+                <span class="status-dot"></span>
+                Soil Monitoring Active
+            </div>
+
+        </div>
+
+
+        <div class="soil-overview">
+
+            <div class="health-card">
+
+                <div class="health-title">
+                    <span>Overall Soil Health</span>
+                    <span class="health-icon">🌿</span>
+                </div>
+
+                <div class="health-score">
+                    <strong id="healthScore">78</strong>
+                    <span>/100</span>
+                </div>
+
+                <div class="health-bar">
+                    <div class="health-fill" style="width:78%;"></div>
+                </div>
+
+                <p class="health-good">
+                    ✓ Good Soil Condition
+                </p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <span class="info-icon">🧪</span>
+
+                <div>
+                    <small>Soil Type</small>
+                    <h3>Black Soil</h3>
+                </div>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <span class="info-icon">⚗️</span>
+
+                <div>
+                    <small>pH Level</small>
+                    <h3>6.8</h3>
+                </div>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <span class="info-icon">💧</span>
+
+                <div>
+                    <small>Moisture</small>
+                    <h3>64%</h3>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="soil-grid">
+
+
+            <!-- Nutrient Analysis -->
+
+            <div class="nutrient-card">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span>SOIL NUTRIENTS</span>
+                        <h2>Nutrient Analysis</h2>
+                    </div>
+
+                    <button onclick="analyzeSoil()">
+                        Analyze
+                    </button>
+
+                </div>
+
+
+                <div class="nutrient-list">
+
+                    <div class="nutrient">
+
+                        <div class="nutrient-top">
+                            <span>🌿 Nitrogen</span>
+                            <strong id="nValue">72%</strong>
+                        </div>
+
+                        <div class="progress">
+                            <div
+                                class="progress-fill nitrogen"
+                                id="nitrogenBar"
+                                style="width:72%;">
+                            </div>
+                        </div>
+
+                        <small>Good</small>
+
+                    </div>
+
+
+                    <div class="nutrient">
+
+                        <div class="nutrient-top">
+                            <span>🌱 Phosphorus</span>
+                            <strong id="pValue">58%</strong>
+                        </div>
+
+                        <div class="progress">
+                            <div
+                                class="progress-fill phosphorus"
+                                id="phosphorusBar"
+                                style="width:58%;">
+                            </div>
+                        </div>
+
+                        <small>Moderate</small>
+
+                    </div>
+
+
+                    <div class="nutrient">
+
+                        <div class="nutrient-top">
+                            <span>🍃 Potassium</span>
+                            <strong id="kValue">81%</strong>
+                        </div>
+
+                        <div class="progress">
+                            <div
+                                class="progress-fill potassium"
+                                id="potassiumBar"
+                                style="width:81%;">
+                            </div>
+                        </div>
+
+                        <small>Excellent</small>
+
+                    </div>
+
+
+                    <div class="nutrient">
+
+                        <div class="nutrient-top">
+                            <span>🌾 Organic Matter</span>
+                            <strong>67%</strong>
+                        </div>
+
+                        <div class="progress">
+                            <div
+                                class="progress-fill organic"
+                                style="width:67%;">
+                            </div>
+                        </div>
+
+                        <small>Good</small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Composition -->
+
+            <div class="composition-card">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span>COMPOSITION</span>
+                        <h2>Soil Composition</h2>
+                    </div>
+
+                </div>
+
+
+                <div class="composition">
+
+                    <div class="circle-chart">
+
+                        <div class="circle-inner">
+                            <strong>68%</strong>
+                            <span>Healthy</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="legend">
+
+                        <div>
+                            <span class="legend-dot sand"></span>
+                            <p>Sand</p>
+                            <strong>32%</strong>
+                        </div>
+
+                        <div>
+                            <span class="legend-dot clay"></span>
+                            <p>Clay</p>
+                            <strong>48%</strong>
+                        </div>
+
+                        <div>
+                            <span class="legend-dot silt"></span>
+                            <p>Silt</p>
+                            <strong>20%</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Recommendation -->
+
+            <div class="recommendation-card">
+
+                <div class="recommendation-header">
+
+                    <div>
+                        <span>SMART RECOMMENDATION</span>
+                        <h2>What Your Soil Needs</h2>
+                    </div>
+
+                    <span class="ai-icon">✦</span>
+
+                </div>
+
+
+                <div class="recommendation-list">
+
+                    <div class="recommendation-item">
+
+                        <span>💧</span>
+
+                        <div>
+                            <strong>Maintain Moisture</strong>
+
+                            <p>
+                                Current moisture level is suitable for most crops.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="recommendation-item">
+
+                        <span>🌿</span>
+
+                        <div>
+                            <strong>Increase Phosphorus</strong>
+
+                            <p>
+                                Consider phosphorus-rich organic fertilizer.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="recommendation-item">
+
+                        <span>♻️</span>
+
+                        <div>
+                            <strong>Add Organic Matter</strong>
+
+                            <p>
+                                Compost can improve soil structure and fertility.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Metrics -->
+
+            <div class="metrics-card">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span>SOIL METRICS</span>
+                        <h2>Environmental Indicators</h2>
+                    </div>
+
+                </div>
+
+
+                <div class="metrics">
+
+                    <div class="metric">
+
+                        <span>🌡️</span>
+
+                        <div>
+                            <small>Soil Temperature</small>
+                            <strong>27°C</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="metric">
+
+                        <span>💦</span>
+
+                        <div>
+                            <small>Water Retention</small>
+                            <strong>74%</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="metric">
+
+                        <span>🧬</span>
+
+                        <div>
+                            <small>Soil Fertility</small>
+                            <strong>82%</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div id="weatherPage" style="display:none;">
+<div class="weather-page">
+
+    <div class="weather-header">
+        <div>
+            <span class="weather-tag">SMART WEATHER INTELLIGENCE</span>
+            <h1>☀️ Weather Center</h1>
+            <p>Real-time weather insights for smarter farm decisions.</p>
+        </div>
+
+        <div class="location-box">
+            <i class="fa-solid fa-location-dot"></i>
+            <div>
+                <small>Current Location</small>
+                <strong>Chennai, Tamil Nadu</strong>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- MAIN WEATHER -->
+
+    <div class="weather-hero">
+
+        <div class="weather-animation">
+
+            <div class="sun"></div>
+
+            <div class="cloud cloud-one"></div>
+            <div class="cloud cloud-two"></div>
+            <div class="cloud cloud-three"></div>
+
+        </div>
+
+
+        <div class="current-weather">
+
+            <span class="live-label">
+                <span></span> LIVE WEATHER
+            </span>
+
+            <h2 id="temperature">29°</h2>
+
+            <h3 id="weatherCondition">
+                Partly Cloudy
+            </h3>
+
+            <p>
+                Feels like <span id="feelsLike">32°C</span>
+            </p>
+
+
+            <div class="weather-details">
+
+                <div>
+                    <i class="fa-solid fa-droplet"></i>
+                    <span>Humidity</span>
+                    <strong id="humidity">70%</strong>
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-wind"></i>
+                    <span>Wind</span>
+                    <strong id="wind">12 km/h</strong>
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-eye"></i>
+                    <span>Visibility</span>
+                    <strong>8 km</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="weather-ring">
+
+            <div class="ring">
+
+                <div class="ring-center">
+                    <span>UV INDEX</span>
+                    <strong>6</strong>
+                    <small>Moderate</small>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- WEATHER STATS -->
+
+    <div class="weather-stats">
+
+        <div class="weather-stat">
+
+            <div class="stat-icon">
+                🌡️
+            </div>
+
+            <div>
+                <small>Temperature</small>
+                <strong>29°C</strong>
+            </div>
+
+            <span class="trend up">+2°</span>
+
+        </div>
+
+
+        <div class="weather-stat">
+
+            <div class="stat-icon">
+                💧
+            </div>
+
+            <div>
+                <small>Humidity</small>
+                <strong>70%</strong>
+            </div>
+
+            <span class="trend">Normal</span>
+
+        </div>
+
+
+        <div class="weather-stat">
+
+            <div class="stat-icon">
+                🌧️
+            </div>
+
+            <div>
+                <small>Rain Chance</small>
+                <strong>35%</strong>
+            </div>
+
+            <span class="trend">Low</span>
+
+        </div>
+
+
+        <div class="weather-stat">
+
+            <div class="stat-icon">
+                🌬️
+            </div>
+
+            <div>
+                <small>Wind Speed</small>
+                <strong>12 km/h</strong>
+            </div>
+
+            <span class="trend">NE</span>
+
+        </div>
+
+    </div>
+
+
+    <!-- BOTTOM -->
+
+    <div class="weather-grid">
+
+
+        <!-- FORECAST -->
+
+        <div class="forecast-card">
+
+            <div class="weather-section-title">
+
+                <div>
+                    <span>UPCOMING WEATHER</span>
+                    <h2>5 Day Forecast</h2>
+                </div>
+
+                <i class="fa-solid fa-calendar-days"></i>
+
+            </div>
+
+
+            <div class="forecast-list">
+
+                <div class="forecast-day">
+
+                    <div>
+                        <strong>Today</strong>
+                        <small>Thu</small>
+                    </div>
+
+                    <span class="forecast-icon">🌤️</span>
+
+                    <div class="forecast-temp">
+                        <strong>32°</strong>
+                        <small>26°</small>
+                    </div>
+
+                    <span class="rain-percent">
+                        💧 35%
+                    </span>
+
+                </div>
+
+
+                <div class="forecast-day">
+
+                    <div>
+                        <strong>Friday</strong>
+                        <small>Aug 14</small>
+                    </div>
+
+                    <span class="forecast-icon">🌧️</span>
+
+                    <div class="forecast-temp">
+                        <strong>30°</strong>
+                        <small>25°</small>
+                    </div>
+
+                    <span class="rain-percent">
+                        💧 65%
+                    </span>
+
+                </div>
+
+
+                <div class="forecast-day">
+
+                    <div>
+                        <strong>Saturday</strong>
+                        <small>Aug 15</small>
+                    </div>
+
+                    <span class="forecast-icon">⛅</span>
+
+                    <div class="forecast-temp">
+                        <strong>31°</strong>
+                        <small>25°</small>
+                    </div>
+
+                    <span class="rain-percent">
+                        💧 42%
+                    </span>
+
+                </div>
+
+
+                <div class="forecast-day">
+
+                    <div>
+                        <strong>Sunday</strong>
+                        <small>Aug 16</small>
+                    </div>
+
+                    <span class="forecast-icon">☀️</span>
+
+                    <div class="forecast-temp">
+                        <strong>33°</strong>
+                        <small>27°</small>
+                    </div>
+
+                    <span class="rain-percent">
+                        💧 20%
+                    </span>
+
+                </div>
+
+
+                <div class="forecast-day">
+
+                    <div>
+                        <strong>Monday</strong>
+                        <small>Aug 17</small>
+                    </div>
+
+                    <span class="forecast-icon">🌦️</span>
+
+                    <div class="forecast-temp">
+                        <strong>31°</strong>
+                        <small>26°</small>
+                    </div>
+
+                    <span class="rain-percent">
+                        💧 48%
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- FARM IMPACT -->
+
+        <div class="farm-weather-card">
+
+            <div class="weather-section-title">
+
+                <div>
+                    <span>FARM INTELLIGENCE</span>
+                    <h2>Weather Impact</h2>
+                </div>
+
+                <span class="ai-badge">AI</span>
+
+            </div>
+
+
+            <div class="impact-item good">
+
+                <div class="impact-icon">🌱</div>
+
+                <div>
+                    <strong>Crop Growth</strong>
+                    <p>
+                        Temperature is suitable for current crops.
+                    </p>
+                </div>
+
+                <span>Good</span>
+
+            </div>
+
+
+            <div class="impact-item warning">
+
+                <div class="impact-icon">💧</div>
+
+                <div>
+                    <strong>Irrigation</strong>
+                    <p>
+                        Moderate humidity. Irrigate in evening.
+                    </p>
+                </div>
+
+                <span>Medium</span>
+
+            </div>
+
+
+            <div class="impact-item good">
+
+                <div class="impact-icon">☀️</div>
+
+                <div>
+                    <strong>Sunlight</strong>
+                    <p>
+                        Good sunlight expected today.
+                    </p>
+                </div>
+
+                <span>Good</span>
+
+            </div>
+
+
+            <div class="weather-alert">
+
+                <span>⚡</span>
+
+                <div>
+                    <strong>Weather Alert</strong>
+                    <p>
+                        Rain probability may increase tomorrow.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+</div>
+
+<div id="diseasePage" style="display:none;">
+<div class="disease-page">
+
+    <!-- HEADER -->
+
+    <div class="disease-header">
+
+        <div>
+            <span class="disease-tag">
+                AI PLANT HEALTH INTELLIGENCE
+            </span>
+
+            <h1>🌿 Disease Detection</h1>
+
+            <p>
+                Detect crop diseases early and protect your farm.
+            </p>
+        </div>
+
+        <div class="ai-status">
+            <span></span>
+            AI Scanner Ready
+        </div>
+
+    </div>
+
+
+    <!-- MAIN SCANNER -->
+
+    <div class="scanner-layout">
+
+
+        <!-- VIDEO -->
+
+        <div class="video-card">
+
+            <div class="video-header">
+
+                <div>
+                    <span>LIVE FARM MONITOR</span>
+                    <h2>Plant Health Scanner</h2>
+                </div>
+
+                <div class="live-badge">
+                    <span></span>
+                    LIVE
+                </div>
+
+            </div>
+
+
+            <div class="video-container">
+
+                <video
+                    id="farmVideo"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                >
+
+                    <source
+                        src="../video/18809430-uhd_3840_2160_30fps.mp4"
+                        type="video/mp4"
+                    >
+
+                    Your browser does not support video.
+
+                </video>
+
+
+                <div class="scan-overlay">
+
+                    <div class="corner top-left"></div>
+                    <div class="corner top-right"></div>
+                    <div class="corner bottom-left"></div>
+                    <div class="corner bottom-right"></div>
+
+                    <div class="scan-line"></div>
+
+                </div>
+
+
+                <div class="video-status">
+                    🌱 Monitoring Crop Health
+                </div>
+
+            </div>
+
+
+            <!-- VIDEO CONTROLS -->
+
+            <div class="video-controls">
+
+                <button id="playVideo">
+                    ▶
+                </button>
+
+                <button id="pauseVideo">
+                    ⏸
+                </button>
+
+                <button id="muteVideo">
+                    🔇
+                </button>
+
+                <span>
+                    Live Crop Monitoring
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- UPLOAD -->
+
+        <div class="upload-card">
+
+            <div class="upload-icon">
+                📷
+            </div>
+
+            <h2>Scan Your Plant</h2>
+
+            <p>
+                Upload a clear image of the affected leaf.
+            </p>
+
+
+            <label class="upload-area">
+
+                <input
+                    type="file"
+                    id="leafImage"
+                    accept="image/*"
+                >
+
+                <div>
+
+                    <span>📤</span>
+
+                    <strong>
+                        Click to Upload
+                    </strong>
+
+                    <small>
+                        JPG / PNG • Max 5MB
+                    </small>
+
+                </div>
+
+            </label>
+
+
+            <!-- IMAGE PREVIEW -->
+
+            <div
+                id="imagePreview"
+                class="image-preview"
+            ></div>
+
+
+            <button
+                id="scanBtn"
+                class="scan-btn"
+            >
+
+                🔍 Scan for Disease
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- SCANNING -->
+
+    <div
+        id="scanningBox"
+        class="scanning-box"
+        style="display:none;"
+    >
+
+        <div class="scanner-animation">
+
+            <div></div>
+
+        </div>
+
+        <h2>Analyzing Plant...</h2>
+
+        <p>
+            AI is checking leaf patterns and disease symptoms.
+        </p>
+
+        <div class="loading-bar">
+            <div id="loadingProgress"></div>
+        </div>
+
+        <span id="scanPercentage">
+            0%
+        </span>
+
+    </div>
+
+
+    <!-- RESULT -->
+
+    <div
+        id="diseaseResult"
+        class="disease-result"
+        style="display:none;"
+    >
+
+        <div class="result-header">
+
+            <div>
+
+                <span>
+                    AI ANALYSIS RESULT
+                </span>
+
+                <h2>
+                    ⚠️ Leaf Disease Detected
+                </h2>
+
+            </div>
+
+            <div class="confidence">
+
+                <strong>
+                    94%
+                </strong>
+
+                <small>
+                    Confidence
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="result-grid">
+
+
+            <div class="result-image">
+
+                <img
+                    id="resultImage"
+                    src=""
+                    alt="Leaf"
+                >
+
+            </div>
+
+
+            <div class="disease-info">
+
+                <span class="disease-label">
+                    DETECTED DISEASE
+                </span>
+
+                <h1>
+                    🍃 Leaf Blight
+                </h1>
+
+                <p>
+                    Brown spots and damaged leaf areas
+                    indicate possible leaf blight infection.
+                </p>
+
+
+                <div class="treatment">
+
+                    <h3>
+                        💊 Recommended Treatment
+                    </h3>
+
+                    <p>
+                        Remove affected leaves and apply
+                        appropriate fungicide. Improve air
+                        circulation around the crop.
+                    </p>
+
+                </div>
+
+
+                <div class="prevention">
+
+                    <h3>
+                        🛡️ Prevention
+                    </h3>
+
+                    <ul>
+
+                        <li>
+                            Avoid excessive watering
+                        </li>
+
+                        <li>
+                            Maintain proper plant spacing
+                        </li>
+
+                        <li>
+                            Remove infected leaves
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <button
+                    id="scanAgain"
+                    class="scan-again"
+                >
+
+                    🔄 Scan Another Leaf
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- QUICK TIPS -->
+
+    <div class="disease-tips">
+
+        <div>
+
+            <span>01</span>
+
+            <h3>Capture Clearly</h3>
+
+            <p>
+                Take a clear photo of the affected leaf.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <span>02</span>
+
+            <h3>AI Analysis</h3>
+
+            <p>
+                Our scanner analyzes visible symptoms.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <span>03</span>
+
+            <h3>Take Action</h3>
+
+            <p>
+                Follow the recommended treatment.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+</div>
+
+<div id="analyticsPage" style="display:none;">
+<div class="analytics-container">
+
+    <!-- HEADER -->
+
+    <div class="analytics-header">
+
+        <div>
+            <span class="small-title">SMART FARM</span>
+
+            <h1>
+                <i class="fa-solid fa-chart-line"></i>
+                Farm Analytics
+            </h1>
+
+            <p>
+                Monitor your farm performance and make data-driven decisions.
+            </p>
+        </div>
+
+
+        <div class="period-selector">
+
+            <button class="period active" data-period="week">
+                7 Days
+            </button>
+
+            <button class="period" data-period="month">
+                30 Days
+            </button>
+
+            <button class="period" data-period="year">
+                1 Year
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================= -->
+    <!-- ANALYTICS CARDS -->
+    <!-- ========================= -->
+
+    <div class="analytics-cards">
+
+        <div class="analytics-card">
+
+            <div class="card-icon">
+                <i class="fa-solid fa-heart-pulse"></i>
+            </div>
+
+            <div>
+
+                <span>Farm Health</span>
+
+                <h2>
+                    <span class="counter" data-target="87">0</span>%
+                </h2>
+
+                <small class="positive">
+                    <i class="fa-solid fa-arrow-up"></i>
+                    6.4% this week
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="analytics-card">
+
+            <div class="card-icon">
+                <i class="fa-solid fa-seedling"></i>
+            </div>
+
+            <div>
+
+                <span>Crop Growth</span>
+
+                <h2>
+                    <span class="counter" data-target="82">0</span>%
+                </h2>
+
+                <small class="positive">
+                    <i class="fa-solid fa-arrow-up"></i>
+                    Healthy growth
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="analytics-card">
+
+            <div class="card-icon">
+                <i class="fa-solid fa-wheat-awn"></i>
+            </div>
+
+            <div>
+
+                <span>Estimated Yield</span>
+
+                <h2>
+                    <span class="counter" data-target="4.8">0</span>
+                    T
+                </h2>
+
+                <small>
+                    Expected harvest
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="analytics-card">
+
+            <div class="card-icon">
+                <i class="fa-solid fa-droplet"></i>
+            </div>
+
+            <div>
+
+                <span>Water Efficiency</span>
+
+                <h2>
+                    <span class="counter" data-target="76">0</span>%
+                </h2>
+
+                <small class="positive">
+                    Optimal usage
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================= -->
+    <!-- CHART SECTION -->
+    <!-- ========================= -->
+
+    <div class="chart-grid">
+
+
+        <!-- CROP GROWTH -->
+
+        <div class="chart-box large">
+
+            <div class="chart-heading">
+
+                <div>
+                    <h2>🌱 Crop Growth</h2>
+                    <p>Growth performance over time</p>
+                </div>
+
+                <span class="chart-badge">
+                    +12.8%
+                </span>
+
+            </div>
+
+            <div class="chart-area">
+
+                <canvas id="growthChart"></canvas>
+
+            </div>
+
+        </div>
+
+
+        <!-- SOIL MOISTURE -->
+
+        <div class="chart-box">
+
+            <div class="chart-heading">
+
+                <div>
+                    <h2>💧 Soil Moisture</h2>
+                    <p>Recent moisture levels</p>
+                </div>
+
+            </div>
+
+            <div class="chart-area">
+
+                <canvas id="moistureChart"></canvas>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- ========================= -->
+    <!-- SECOND CHART -->
+    <!-- ========================= -->
+
+    <div class="chart-grid">
+
+
+        <!-- TEMPERATURE -->
+
+        <div class="chart-box">
+
+            <div class="chart-heading">
+
+                <div>
+                    <h2>🌡️ Temperature</h2>
+                    <p>Daily temperature trend</p>
+                </div>
+
+            </div>
+
+            <div class="chart-area">
+
+                <canvas id="temperatureChart"></canvas>
+
+            </div>
+
+        </div>
+
+
+        <!-- CROP PERFORMANCE -->
+
+        <div class="chart-box">
+
+            <div class="chart-heading">
+
+                <div>
+                    <h2>🌾 Crop Performance</h2>
+                    <p>Current crop condition</p>
+                </div>
+
+            </div>
+
+
+            <div class="crop-performance">
+
+                <div class="crop-row">
+
+                    <div class="crop-info">
+
+                        <span>Rice</span>
+
+                        <strong>92%</strong>
+
+                    </div>
+
+                    <div class="progress">
+
+                        <span style="width:92%"></span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="crop-row">
+
+                    <div class="crop-info">
+
+                        <span>Tomato</span>
+
+                        <strong>84%</strong>
+
+                    </div>
+
+                    <div class="progress">
+
+                        <span style="width:84%"></span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="crop-row">
+
+                    <div class="crop-info">
+
+                        <span>Maize</span>
+
+                        <strong>78%</strong>
+
+                    </div>
+
+                    <div class="progress">
+
+                        <span style="width:78%"></span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="crop-row">
+
+                    <div class="crop-info">
+
+                        <span>Cotton</span>
+
+                        <strong>69%</strong>
+
+                    </div>
+
+                    <div class="progress">
+
+                        <span style="width:69%"></span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================= -->
+    <!-- FARM SUMMARY -->
+    <!-- ========================= -->
+
+    <div class="summary-box">
+
+        <div class="summary-icon">
+
+            <i class="fa-solid fa-lightbulb"></i>
+
+        </div>
+
+        <div>
+
+            <h3>Smart Farm Insight</h3>
+
+            <p>
+                Your farm is currently performing well.
+                Crop growth and soil moisture are within healthy ranges.
+                Maintaining the current irrigation schedule can improve
+                overall yield.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+</div>
+<div id="marketPage" style="display:none;">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Market Price</title>
+
+<link rel="stylesheet"
+href="../css/market.css">
+
+<link
+href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+rel="stylesheet">
+
+</head>
+
+
+<body>
+
+
+<div class="market-container">
+
+
+    <!-- PAGE HEADER -->
+
+    <div class="market-header">
+
+        <div>
+
+            <h1>🌾 Market Prices</h1>
+
+            <p>
+                Today's agricultural market prices
+            </p>
+
+        </div>
+
+
+        <button
+        id="updatePriceBtn">
+
+            🔄 Update Prices
+
+        </button>
+
+    </div>
+
+
+
+    <!-- MARKET INFO -->
+
+    <div class="market-info">
+
+
+        <div class="info-card">
+
+            <span>📍 Market</span>
+
+            <strong>
+                Koyambedu Market
+            </strong>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <span>📅 Last Updated</span>
+
+            <strong id="lastUpdated">
+
+                Today, 10:30 AM
+
+            </strong>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <span>🌱 Crops Tracked</span>
+
+            <strong>
+
+                12 Crops
+
+            </strong>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- PRICE CARDS -->
+
+    <div class="price-grid">
+
+
+        <!-- Rice -->
+
+        <div class="price-card">
+
+            <div class="crop-icon">
+                🌾
+            </div>
+
+            <div>
+
+                <h3>Rice</h3>
+
+                <p>₹ / Quintal</p>
+
+            </div>
+
+            <h2
+            id="ricePrice">
+
+                ₹3,200
+
+            </h2>
+
+            <span class="up">
+
+                ↑ 4.5%
+
+            </span>
+
+        </div>
+
+
+
+        <!-- Wheat -->
+
+        <div class="price-card">
+
+            <div class="crop-icon">
+                🌾
+            </div>
+
+            <div>
+
+                <h3>Wheat</h3>
+
+                <p>₹ / Quintal</p>
+
+            </div>
+
+            <h2
+            id="wheatPrice">
+
+                ₹2,650
+
+            </h2>
+
+            <span class="up">
+
+                ↑ 2.8%
+
+            </span>
+
+        </div>
+
+
+
+        <!-- Tomato -->
+
+        <div class="price-card">
+
+            <div class="crop-icon">
+                🍅
+            </div>
+
+            <div>
+
+                <h3>Tomato</h3>
+
+                <p>₹ / Quintal</p>
+
+            </div>
+
+            <h2
+            id="tomatoPrice">
+
+                ₹2,850
+
+            </h2>
+
+            <span class="down">
+
+                ↓ 1.6%
+
+            </span>
+
+        </div>
+
+
+
+        <!-- Onion -->
+
+        <div class="price-card">
+
+            <div class="crop-icon">
+                🧅
+            </div>
+
+            <div>
+
+                <h3>Onion</h3>
+
+                <p>₹ / Quintal</p>
+
+            </div>
+
+            <h2
+            id="onionPrice">
+
+                ₹3,100
+
+            </h2>
+
+            <span class="up">
+
+                ↑ 3.2%
+
+            </span>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- PRICE TREND -->
+
+    <div class="trend-section">
+
+
+        <div class="trend-header">
+
+            <div>
+
+                <h2>
+                    📈 Market Price Trend
+                </h2>
+
+                <p>
+                    Average crop price movement
+                </p>
+
+            </div>
+
+
+            <select id="cropSelect">
+
+                <option value="rice">
+                    Rice
+                </option>
+
+                <option value="wheat">
+                    Wheat
+                </option>
+
+                <option value="tomato">
+                    Tomato
+                </option>
+
+                <option value="onion">
+                    Onion
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="chart">
+
+            <div class="chart-line"></div>
+
+            <div class="point p1"></div>
+            <div class="point p2"></div>
+            <div class="point p3"></div>
+            <div class="point p4"></div>
+            <div class="point p5"></div>
+            <div class="point p6"></div>
+
+        </div>
+
+
+        <div class="days">
+
+            <span>Mon</span>
+
+            <span>Tue</span>
+
+            <span>Wed</span>
+
+            <span>Thu</span>
+
+            <span>Fri</span>
+
+            <span>Sat</span>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- MARKET TABLE -->
+
+    <div class="market-table">
+
+        <h2>
+            🏪 Today's Market Details
+        </h2>
+
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Crop</th>
+
+                    <th>Market</th>
+
+                    <th>Min Price</th>
+
+                    <th>Max Price</th>
+
+                    <th>Average</th>
+
+                    <th>Trend</th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+                <tr>
+
+                    <td>🌾 Rice</td>
+
+                    <td>Koyambedu</td>
+
+                    <td>₹3,000</td>
+
+                    <td>₹3,400</td>
+
+                    <td>₹3,200</td>
+
+                    <td class="up">
+                        ↑ 4.5%
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>🌾 Wheat</td>
+
+                    <td>Koyambedu</td>
+
+                    <td>₹2,500</td>
+
+                    <td>₹2,800</td>
+
+                    <td>₹2,650</td>
+
+                    <td class="up">
+                        ↑ 2.8%
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>🍅 Tomato</td>
+
+                    <td>Koyambedu</td>
+
+                    <td>₹2,600</td>
+
+                    <td>₹3,000</td>
+
+                    <td>₹2,850</td>
+
+                    <td class="down">
+                        ↓ 1.6%
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>🧅 Onion</td>
+
+                    <td>Koyambedu</td>
+
+                    <td>₹2,900</td>
+
+                    <td>₹3,300</td>
+
+                    <td>₹3,100</td>
+
+                    <td class="up">
+                        ↑ 3.2%
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+</div>
+
+
+<script src="../js/market.js"></script>
+
+</body>
+
+</html>
+</div>
+<div id="reportsPage" style="display:none;">
+<div class="reports-container">
+    <div class="reports-hero">
+        <div>
+            <span class="report-kicker">SMART FARM DOCUMENT CENTER</span>
+            <h1><i class="fa-solid fa-file-circle-check"></i> Farm Reports</h1>
+            <p>View visual farm reports, crop performance and field insights.</p>
+        </div>
+        <button id="printReportBtn" class="report-action"><i class="fa-solid fa-print"></i> Print Report</button>
+    </div>
+
+    <div class="report-summary">
+        <div><span>Farm Health</span><strong>87%</strong><small>Excellent</small></div>
+        <div><span>Crop Growth</span><strong>82%</strong><small>Healthy</small></div>
+        <div><span>Water Efficiency</span><strong>76%</strong><small>Optimal</small></div>
+        <div><span>Estimated Yield</span><strong>4.8 T</strong><small>Expected</small></div>
+    </div>
+
+    <div class="report-section-title">
+        <div>
+            <span>VISUAL REPORTS</span>
+            <h2>Explore Farm Images</h2>
+        </div>
+        <p>Click any image to view it larger.</p>
+    </div>
+
+    <div class="report-gallery">
+        <button class="report-image-card" data-image="../images/form overview.jpeg" data-title="Farm Overview">
+            <img src="../images/form overview.jpeg" alt="Farm overview">
+            <span><i class="fa-solid fa-expand"></i> Farm Overview</span>
+        </button>
+
+        <button class="report-image-card" data-image="../images/farm-image-1.jpg" data-title="Field Report">
+            <img src="../images/farm-image-1.jpg" alt="Field report">
+            <span><i class="fa-solid fa-expand"></i> Field Report</span>
+        </button>
+
+        <button class="report-image-card" data-image="../images/environment-landscape-agricultural-field-sunset-countryside-scene_124507-16101.avif" data-title="Farm Environment">
+            <img src="../images/environment-landscape-agricultural-field-sunset-countryside-scene_124507-16101.avif" alt="Farm environment">
+            <span><i class="fa-solid fa-expand"></i> Farm Environment</span>
+        </button>
+
+        <button class="report-image-card" data-image="../images/1_BND0zVNGrZrKL3EHA9gdYA.png" data-title="Crop Monitoring">
+            <img src="../images/1_BND0zVNGrZrKL3EHA9gdYA.png" alt="Crop monitoring">
+            <span><i class="fa-solid fa-expand"></i> Crop Monitoring</span>
+        </button>
+    </div>
+
+    <div class="report-insights">
+        <div>
+            <i class="fa-solid fa-leaf"></i>
+            <h3>Crop Insight</h3>
+            <p>Rice is currently showing the strongest performance at 92%.</p>
+        </div>
+        <div>
+            <i class="fa-solid fa-droplet"></i>
+            <h3>Water Insight</h3>
+            <p>Current moisture levels are within the recommended range.</p>
+        </div>
+        <div>
+            <i class="fa-solid fa-cloud-sun"></i>
+            <h3>Weather Insight</h3>
+            <p>Maintain the current irrigation plan and monitor rainfall.</p>
+        </div>
+    </div>
+</div>
+
+<div id="reportLightbox" class="report-lightbox">
+    <button id="closeReportLightbox" aria-label="Close">&times;</button>
+    <img id="reportLightboxImage" src="" alt="">
+    <h3 id="reportLightboxTitle"></h3>
+</div>
+</div>
+<div id="settingsPage" style="display:none;">
+<div class="settings-container">
+    <div class="settings-hero">
+        <div>
+            <span>ACCOUNT CONTROL CENTER</span>
+            <h1><i class="fa-solid fa-sliders"></i> Settings</h1>
+            <p>Personalize your Smart Agriculture dashboard.</p>
+        </div>
+        <div class="settings-status"><i class="fa-solid fa-circle"></i> System Online</div>
+    </div>
+
+    <div class="settings-layout">
+        <div class="settings-profile">
+            <div class="settings-avatar"><i class="fa-solid fa-user"></i></div>
+            <h2>Farmer Profile</h2>
+            <p>Manage your basic farm details.</p>
+            <div class="profile-mini"><i class="fa-solid fa-shield-halved"></i> Secure account</div>
+        </div>
+
+        <div class="settings-main">
+            <div class="setting-card">
+                <div class="setting-heading"><i class="fa-solid fa-user-pen"></i><div><h3>Profile Information</h3><p>Update your farmer details.</p></div></div>
+                <div class="settings-form">
+                    <label>Farmer Name<input id="farmerName" type="text" value="Farmer"></label>
+                    <label>Farm Location<input id="farmLocation" type="text" value="Chennai"></label>
+                    <label>Farm Type<select id="farmType"><option>Crop Farm</option><option>Organic Farm</option><option>Mixed Farm</option></select></label>
+                </div>
+            </div>
+
+            <div class="setting-card">
+                <div class="setting-heading"><i class="fa-solid fa-bell"></i><div><h3>Notifications</h3><p>Choose what you want to receive.</p></div></div>
+                <div class="toggle-row"><div><strong>Weather Alerts</strong><small>Rain and extreme weather notifications</small></div><label class="switch"><input type="checkbox" checked><span></span></label></div>
+                <div class="toggle-row"><div><strong>Crop Alerts</strong><small>Disease and crop health reminders</small></div><label class="switch"><input type="checkbox" checked><span></span></label></div>
+                <div class="toggle-row"><div><strong>Market Updates</strong><small>Price change notifications</small></div><label class="switch"><input type="checkbox"><span></span></label></div>
+            </div>
+
+            <div class="setting-card">
+                <div class="setting-heading"><i class="fa-solid fa-palette"></i><div><h3>Dashboard Preferences</h3><p>Customize your experience.</p></div></div>
+                <div class="preference-grid">
+                    <label>Temperature Unit<select id="temperatureUnit"><option>°C Celsius</option><option>°F Fahrenheit</option></select></label>
+                    <label>Default View<select id="defaultView"><option>Dashboard</option><option>Farm Analytics</option><option>Weather</option></select></label>
+                </div>
+            </div>
+
+            <div class="settings-actions">
+                <button id="resetSettingsBtn" class="secondary-setting">Reset</button>
+                <button id="saveSettingsBtn" class="primary-setting"><i class="fa-solid fa-check"></i> Save Changes</button>
+            </div>
+            <div id="settingsToast" class="settings-toast"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+<script src="../js/disease.js"></script>
+<script src="../js/analytics.js"></script>
+<script src="../js/market.js"></script>
+<script src="../js/reports.js"></script>
+<script src="../js/settings.js"></script>
+<script src="../js/dashboard.js"></script>
+
+
+</body>
+</html>
